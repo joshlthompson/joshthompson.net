@@ -7,22 +7,24 @@ STYLES := static/css/tufte-css/tufte.css \
 	static/css/pandoc-solarized.css \
 	static/css/tufte-extra.css
 
+TEMPLATES := templates/tufte.html5
+
 .PHONY: all
 all: $(TARGETS)
 
-%.html: %.md tufte.html5 $(STYLES)
+%.html: %.md $(TEMPLATES) $(STYLES)
 	pandoc \
 		--katex \
 		--section-divs \
 		--from markdown+tex_math_single_backslash \
 		--filter pandoc-sidenote \
 		--to html5+smart \
-		--template=tufte \
+		--template=$(TEMPLATES) \
 		$(foreach style,$(STYLES),--css $(notdir $(style))) \
 		--output $@ \
 		$<
 
 .PHONY: clean
 clean:
-	rm -f $(TARGETS)
+	rm -f $(TARGETS) 
 
