@@ -1,30 +1,37 @@
+# Define source files
+SOURCES := $(wildcard docs/*.md)
 
-SOURCES := $(shell find docs -name '*.md')
+# Convert markdown paths to html paths
 TARGETS := $(patsubst %.md,%.html,$(SOURCES))
 
-STYLES := static/css/tufte-css/tufte.css \
-	static/css/pandoc.css \
-	static/css/pandoc-solarized.css \
-	static/css/tufte-extra.css
+# Define stylesheet paths for pandoc
+BUILD_STYLES := static/css/tufte-css/tufte.css \
+    static/css/pandoc.css \
+    static/css/pandoc-solarized.css \
+    static/css/tufte-extra.css
 
-TEMPLATES := templates/tufte.html5
+# BDefine stylesheet paths for browsers
+CSS_PATHS := ../../static/css/tufte-css/tufte.css \
+    ../../static/css/pandoc.css \
+    ../../static/css/pandoc-solarized.css \
+    ../../static/css/tufte-extra.css
 
 .PHONY: all
 all: $(TARGETS)
 
-%.html: %.md $(TEMPLATES) $(STYLES)
+# Rule to build HTML files
+%.html: %.md templates/tufte.html5 $(BUILD_STYLES)
 	pandoc \
-		--katex \
-		--section-divs \
-		--from markdown+tex_math_single_backslash \
-		--filter pandoc-sidenote \
-		--to html5+smart \
-		--template=$(TEMPLATES) \
-		$(foreach style,$(STYLES),--css $(notdir $(style))) \
-		--output $@ \
-		$<
+	--katex \
+	--section-divs \
+	--from markdown+tex_math_single_backslash \
+	--filter pandoc-sidenote \
+	--to html5+smart \
+	--template=templates/tufte \
+	$(foreach style,$(CSS_PATHS),--css $(style)) \
+	--output $@ \
+	$<
 
 .PHONY: clean
 clean:
-	rm -f $(TARGETS) 
-
+	rm -f $(TARGETS)
