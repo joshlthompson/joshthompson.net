@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Sample Text</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta charset="utf-8">
+<meta name="generator" content="org-html-export">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=yes">
+<link rel="stylesheet" type="text/css" href="/static/css/theme.css">
+</head>
+<body>
+<header>
+<h1 class="title">Sample Text</h1>
+<p class="subtitle">Borrowed from Tint is not Tufte</p>
+<p class="date"><span class="timestamp-wrapper"><span class="timestamp">[2025-07-08 Tue]</span></span></p>
+</header>
+<nav id="TOC">
+<div id="table-of-contents-1" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents-1" role="doc-toc">
+<ul>
+<li><a href="#org7d0fb8a">Margin Figures</a></li>
+<li><a href="#org0ea78db">Arbitrary Margin Content</a></li>
+<li><a href="#org212e740">Full Width Figures</a></li>
+<li><a href="#orgf272348">Main Column Figures</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<main>
+<html>
+  <body>
+
+    <p>
+Before We Get Started…
+    </p>
+
+
+    <p>
+#+begin
+      <sub>src</sub> python :session :exports results :results file :file fig-nocap-margin-first.png plt.figure(figsize=(4, 4)) plt.scatter(mpg['weight'], mpg['mpg'], c=mpg['cylinders'], s=60, alpha=0.7) plt.xlabel('Weight') plt.ylabel('MPG') plt.tight
+      <sub>layout</sub>() plt.savefig('fig-nocap-margin-first.png', dpi=150, bbox
+      <sub>inches</sub>='tight') plt.close() 'fig-nocap-margin-first.png' #+end
+      <sub>src</sub>
+    </p>
+
+
+    <p>
+This is a straightforward adaptation of the excellent Tufte styling concept, mixed with modern Python data visualization tools like matplotlib and seaborn, plus custom CSS styling—all baked together into an org-mode document providing beautiful academic-style output.
+    </p>
+
+
+    <p>
+We support 
+      <i>italic</i> and bold annotations for text, as well as 
+      <code>code</code> snippets.
+    </p>
+
+
+    <p>
+The remainder follows the original document structure with Python equivalents.
+    </p>
+
+
+    <p>
+Introduction
+    </p>
+
+
+    <p>
+The Tufte handout style is a style that Edward Tufte uses in his books and handouts. Tufte's style is known for its extensive use of sidenotes, tight integration of graphics with text, and well-set typography. This style has been implemented in LaTeX and HTML/CSS
+      <label for="sn-1" class="margin-toggle sidenote-number" /> 
+      <input type="checkbox" id="sn-1" class="margin-toggle" />
+      <span class="sidenote">
+See Github repositories 
+        <a href="https://github.com/tufte-latex/tufte-latex">tufte-latex</a> and 
+        <a href="https://github.com/edwardtufte/tufte-css">tufte-css</a>
+      </span>, respectively.
+    </p>
+
+
+    <p>
+For org-mode HTML output, we can achieve similar results by:
+    </p>
+
+
+    <p>
+Using custom CSS (similar to tufte-css)
+Leveraging org-mode's native margin note capabilities
+Using Python for data visualization instead of R
+    </p>
+
+
+    <p>
+#+begin
+      <sub>example</sub> #+TITLE: An Example Using the Tufte Style #+AUTHOR: John Smith
+    </p>
+
+
+    <p>
+There are two goals of this approach:
+    </p>
+
+
+    <p>
+To produce beautiful HTML output with Tufte-style aesthetics from org-mode documents
+To provide simple syntax using org-babel for figures and margin content, leveraging Python's rich data science ecosystem
+    </p>
+
+
+    <p>
+Headings
+    </p>
+
+
+    <p>
+This style provides first and second-level headings (that is, 
+      <code>= and =</code>), demonstrated in the next section. You may get unexpected output if you try to use == and smaller headings.
+    </p>
+
+
+    <p>
+In his later books
+      <label for="sn-2" class="margin-toggle sidenote-number" /> 
+      <input type="checkbox" id="sn-2" class="margin-toggle" />
+      <span class="sidenote">
+
+        <a href="https://www.edwardtufte.com/tufte/books_be">Beautiful Evidence</a>
+      </span>, Tufte starts each section with a bit of vertical space, a non-indented paragraph, and sets the first few words of the sentence in small caps. To accomplish this using org-mode, you can use custom CSS classes or HTML export settings.
+    </p>
+
+
+    <p>
+Figures
+    </p>
+
+    <div id="outline-container-org7d0fb8a" class="outline-2">
+
+      <h2 id="org7d0fb8a">Margin Figures</h2>
+
+      <div class="outline-text-2" id="text-org7d0fb8a">
+
+        <p>
+Images and graphics play an integral role in Tufte's work. To place figures in the margin you can use org-mode's 
+          <code>#+ATTR_HTML:</code> with custom CSS classes:
+        </p>
+
+
+
+        <p>
+You can adjust the proportions of figures using the 
+          <code>figsize</code> parameter in matplotlib. These are specified in inches, and will be automatically scaled down to fit within the handout margin through CSS.
+        </p>
+      </div>
+    </div>
+
+    <div id="outline-container-org0ea78db" class="outline-2">
+
+      <h2 id="org0ea78db">Arbitrary Margin Content</h2>
+
+      <div class="outline-text-2" id="text-org0ea78db">
+
+        <p>
+In fact, you can include anything in the margin using org-mode's footnotes or custom HTML blocks:
+        </p>
+
+
+        <p>
+#+begin
+          <sub>export</sub> html
+&lt;div class=&quot;margin-note&quot;&gt; We know from &lt;em&gt;the first fundamental theorem of calculus&lt;/em&gt; that for &lt;em&gt;x&lt;/em&gt; in [&lt;em&gt;a&lt;/em&gt;, &lt;em&gt;b&lt;/em&gt;]: &lt;p&gt;\[\frac{d}{dx}\left( \int_{a}^{x} f(u)\,du\right)=f(x).\]&lt;/p&gt; &lt;/div&gt; #+end
+          <sub>export</sub>
+        </p>
+
+
+        <p>
+For the sake of portability, you should keep the margin content as simple as possible. You may use simple org-mode syntax like 
+          <code>bold</code> and 
+          <code>/italic/</code> text.
+        </p>
+      </div>
+    </div>
+
+    <div id="outline-container-org212e740" class="outline-2">
+
+      <h2 id="org212e740">Full Width Figures</h2>
+
+      <div class="outline-text-2" id="text-org212e740">
+
+        <p>
+You can arrange for figures to span across the entire page by using custom CSS classes:
+        </p>
+
+
+
+        <div id="orgb152676" class="figure">
+
+          <p>
+            <img src="generic-blog-2/fig-fullwidth.png" alt="fig-fullwidth.png" />
+          </p>
+        </div>
+
+
+
+        <p>
+Other options related to figures can still be used, such as figure sizing and captions. For full width figures, usually the width is large and height is small.
+        </p>
+      </div>
+    </div>
+
+    <div id="outline-container-orgf272348" class="outline-2">
+
+      <h2 id="orgf272348">Main Column Figures</h2>
+
+      <div class="outline-text-2" id="text-orgf272348">
+
+        <p>
+Besides margin and full width figures, you can of course also include figures constrained to the main column. This is the default type of figures in org-mode HTML output.
+        </p>
+
+
+
+        <div id="orge8a0228" class="figure">
+
+          <p>
+            <img src="fig-main.png plt.figure(figsize=(6, 4))" alt="fig-main.png plt.figure(figsize=(6, 4))" />
+          </p>
+        </div>
+
+
+        <p>
+Sidenotes
+        </p>
+
+
+        <p>
+One of the most prominent and distinctive features of this style is the extensive use of sidenotes. There is a wide margin to provide ample room for sidenotes and small figures. Any use of a footnote will automatically be converted to a sidenote.
+          <label for="sn-3" class="margin-toggle sidenote-number" /> 
+          <input type="checkbox" id="sn-3" class="margin-toggle" />
+          <span class="sidenote">
+This is a sidenote that was entered using a footnote.
+          </span>
+        </p>
+
+
+        <p>
+If you'd like to place ancillary information in the margin without the sidenote mark, you can use custom HTML blocks or org-mode's margin note capabilities.
+        </p>
+
+
+        <p>
+#+begin
+          <sub>export</sub> html
+&lt;div class=&quot;margin-note&quot;&gt;This is a margin note. Notice that there is no number preceding the note.&lt;/div&gt; #+end
+          <sub>export</sub>
+        </p>
+
+
+        <p>
+Tables
+        </p>
+
+
+        <p>
+You can format tables that integrate well with the rest of the Tufte handout style. The table captions can be placed in the margin like figures in the HTML output with appropriate CSS.
+        </p>
+
+
+        <p>
+Block Quotes
+        </p>
+
+
+        <p>
+We know from the org-mode syntax that lines starting with 
+          <code>:</code> or quote blocks are converted to block quotes. Here is an example:
+        </p>
+
+
+        <blockquote>
+
+          <p>
+&quot;If it weren't for my lawyer, I'd still be in prison. It went a lot faster with two people digging.&quot;
+          </p>
+
+
+          <p>
+— Joe Martin
+          </p>
+        </blockquote>
+
+
+        <p>
+Responsiveness
+        </p>
+
+
+        <p>
+The HTML page can be made responsive through CSS media queries. When the page width is smaller than 760px, sidenotes and margin notes can be hidden by default, with JavaScript controls to toggle their visibility.
+        </p>
+
+
+        <p>
+More Examples
+        </p>
+
+
+        <p>
+The rest of this document consists of a few test cases. First we generate two plots in one code block:
+        </p>
+
+
+
+        <div id="orga4f5abf" class="figure">
+
+          <p>
+            <img src="fig-two-together.png fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))" alt="fig-two-together.png fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))" />
+          </p>
+        </div>
+
+
+        <p>
+Some Notes on Tufte CSS
+        </p>
+
+
+        <p>
+There are a few other things in Tufte CSS that we have not mentioned so far. For sans-serif fonts, you can use custom CSS classes. For epigraphs, you may use org-mode's quote blocks:
+        </p>
+
+
+        <div class="org-src-container">
+
+          <pre class="src src-python">
+            <span class="org-builtin">print</span>(
+            <span class="org-string">&quot;Hello from Python!&quot;</span>)
+
+            <span class="org-keyword">import</span> matplotlib.pyplot 
+            <span class="org-keyword">as</span> plt
+
+            <span class="org-builtin">print</span>(
+            <span class="org-string">&quot;Matplotlib imported successfully&quot;</span>)
+          </pre>
+        </div>
+
+
+        <blockquote>
+
+          <p>
+
+            <i>I can win an argument on any topic, against any opponent. People know this, and steer clear of me at parties. Often, as a sign of their great respect, they don't even invite me.</i>
+          </p>
+
+
+          <p>
+— Dave Barry
+          </p>
+        </blockquote>
+
+
+        <p>
+We hope you will enjoy the simplicity of org-mode and Python for data analysis, building upon the beautiful Tufte-CSS styling concepts.
+        </p>
+
+
+        <p>
+Footnotes
+        </p>
+      </div>
+    </div>
+
+    <div id="footnotes">
+
+      <h2 class="footnotes">Footnotes: </h2>
+
+      <div id="text-footnotes">
+
+
+        <div class="footdef">
+          <sup>
+            <a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a>
+          </sup>
+          <div class="footpara" role="doc-footnote">
+See Github repositories 
+            <a href="https://github.com/tufte-latex/tufte-latex">tufte-latex</a> and 
+            <a href="https://github.com/edwardtufte/tufte-css">tufte-css</a>
+          </div>
+        </div>
+
+
+        <div class="footdef">
+          <sup>
+            <a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a>
+          </sup>
+          <div class="footpara" role="doc-footnote">
+
+            <a href="https://www.edwardtufte.com/tufte/books_be">Beautiful Evidence</a>
+          </div>
+        </div>
+
+
+        <div class="footdef">
+          <sup>
+            <a id="fn.3" class="footnum" href="#fnr.3" role="doc-backlink">3</a>
+          </sup>
+          <div class="footpara" role="doc-footnote">
+This is a sidenote that was entered using a footnote.
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </body>
+</html>
+</main>
+</body>
+</html>

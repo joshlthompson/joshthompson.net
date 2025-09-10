@@ -1,0 +1,261 @@
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+
+/* Font */
+@font-face {
+    font-family: 'New York';
+    src: url('/NewYorkMedium-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Reset & Base */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: sans-serif;
+    height: 100%;
+    font-size: 0.91;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+    padding: 0 1em;
+    -webkit-text-size-adjust: 95%;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-size: 1em;
+    font-variant-caps: all-small-caps;
+    font-weight: bold;
+    margin: 0;
+/* TODO: Add bold .otf */
+}
+
+a {
+    font-family: sans-serif;
+}
+
+a:hover {
+    background-color: yellow;
+}
+
+a:visited {
+    text-decoration: line-through;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.container {
+    text-align: left;
+    min-height: 100%;
+    margin: 1em auto;
+    padding-bottom: 4em; /* Space for fixed footer */
+}
+
+/* Responsive container widths */
+@media (min-width: 320px)  { .container { max-width: 600px; } }
+@media (min-width: 620px)  { .container { max-width: 760px; } }
+@media (min-width: 961px)  { .container { max-width: 1088px; } }
+@media (min-width: 1281px) { .container { max-width: 1700px; } }
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.site-header {
+    border-bottom: 1px solid black;
+    min-height: 11em;
+    padding-bottom: 1em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.header-main {
+    flex: 1;
+}
+
+#sitename {
+    display: inline;
+    font-weight: normal;
+    font-family: sans-serif;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 2.5px;
+    color: black;
+    text-decoration: none;
+}
+
+.tagline {
+    margin: 0.5em 0;
+}
+
+.header-utilities {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1em;
+}
+
+/* ==========================================================================
+   Clock
+   ========================================================================== */
+
+.clock-container {
+    font-size: 1em;
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+}
+
+.time-part {
+    display: inline-block;
+    width: 1.2em;
+    text-align: left;
+    font-family: san-serif;
+}
+
+.hours   { padding-top: 10px; }
+.minutes { padding-top: 0; }
+.seconds { padding-top: 4px; }
+.colon   { 
+    width: 0.5em; 
+    padding-top: 10px;
+   }
+.colon:last-of-type { 
+    padding-top: 0px; 
+}
+
+/* ==========================================================================
+   Search
+   ========================================================================== */
+
+.search-form {
+    margin: 0;
+}
+
+.searchbox {
+    border: 1px solid;
+    background: white;
+    padding: 4px 8px;
+    font-style: italic;
+    font-family: sans-serif;
+    font-size: 0.91em;
+    width: 200px;
+    box-sizing: border-box;
+}
+
+.searchbox:focus {
+    outline: none;
+    border-color: black;
+}
+
+/* ==========================================================================
+   Filters
+   ========================================================================== */
+
+.filters-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+    .filters {
+	display: flex;
+	gap: 0.25em;
+    /*margin: 2em 0;*/
+    /*text-align: left;*/
+        font-size: 0.91em;
+}
+
+.filter-link {
+    background: none;
+    border: none;
+   /* color: #333;*/
+    cursor: pointer;
+    font: inherit;
+    padding: 0;
+    margin: 0 0.25em;
+}
+
+.filter-link:hover {
+    text-decoration: underline;
+}
+
+.filter-link.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Commas between filters */
+.filter-link:not(:last-child)::after {
+    content: ',';
+    margin-left: 0.25em;
+}
+
+/* ==========================================================================
+   Archive List
+   ========================================================================== */
+
+.column-list {
+    column-width: 12em;
+    column-gap: 2em;
+}
+
+.archive-item {
+    margin-bottom: 0.33em;
+    border-radius: 3px;
+    font-size: 0.91em;
+    font-family: sans-serif;
+    break-inside: avoid;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.archive-item a {
+    flex: 1;
+    margin-right: 1em;
+}
+
+.archive-item a:hover {
+    text-decoration: underline;
+}
+
+.archive-item a:visited {
+    text-decoration: line-through ;
+
+.archive-item .date {
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+.archive-item.hidden {
+    display: none;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 1em;
+    font-size: 0.91em;
+    text-align: center;
+}

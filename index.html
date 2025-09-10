@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josh Thompson</title>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="/static/css/home.css">
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <div class="header-main">
+                <h1><a id="sitename" href="/">JOSH THOMPSON</a></h1>
+                <p class="tagline">
+                  I am a product manager from London, UK. Currently at the University of Bristol<br>
+		  completing a Masters in Computer Science. This site will serve as an archive of<br>
+		  products I have worked on, tools I have authored and personal projects in various-<br>
+		  states of completion. It will also store recipes I have written safe from tea stains and tomato sauce.<br>
+<a href="/content/cv.pdf">CV</a>
+<a href="mailto:jt@joshthompson.net">contact</a>
+
+                </p>
+            </div>
+            
+            <div class="header-utilities">
+                <!-- Clock -->
+                <div class="clock-container" id="styledClock">
+                    <span class="time-part hours" id="hours">00</span>
+                    <span class="time-part colon">:</span>
+                    <span class="time-part minutes" id="minutes">00</span>
+                    <span class="time-part colon">:</span>
+                    <span class="time-part seconds" id="seconds">00</span>
+                </div>
+                
+            </div>
+        </header>
+
+	<div class="filters-wrapper">
+
+        <!-- Filter Navigation -->
+        <nav class="filters" role="navigation" aria-label="Content filters">
+            <button class="filter-link active" data-category="all">all</button>
+            <button class="filter-link" data-category="work">work</button>
+            <button class="filter-link" data-category="recipes">recipes</button>
+            <button class="filter-link" data-category="notes">notes</button>
+        </nav>
+
+	<!-- Search -->
+        <form class="search-form" id="searchForm">
+	  <input
+	    type="text" 
+            class="searchbox" 
+            id="searchInput"
+            placeholder="Search"
+            aria-label="Search content"
+	    />
+	</form>
+</div>
+        <!-- Main Content -->
+        <main class="column-list" id="archiveList">
+            <!-- Archive items will be dynamically loaded here -->
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        Content for this site is
+        <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>.
+        The <a href="https://github.com/joshlthompson">code</a> for this site
+        is <a href="https://opensource.org/licenses/MIT">MIT</a>.
+    </footer>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Org Sample Title</title>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta charset="utf-8">
+<meta name="generator" content="org-html-export">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=yes">
+<link rel="stylesheet" type="text/css" href="/static/css/theme.css">
+</head>
+<body>
+<header>
+<h1 class="title">Org Sample Title</h1>
+<p class="subtitle">and sample subtitle</p>
+<p class="date">2025-07-13</p>
+</header>
+<aside class="summary">
+<p>
+This article explores the implementation of aside summaries in Org mode exports. 
+We demonstrate how to elegantly integrate summary sections that appear in the 
+left margin on wide screens, similar to tables of contents.
+</p>
+
+<p>
+Key points covered:
+</p>
+<ul class="org-ul">
+<li>Special block syntax for summaries</li>
+<li>Conditional rendering based on options</li>
+<li>CSS styling for responsive layout</li>
+</ul>
+
+</aside>
+<main>
+<html>
+  <body>
+    <p>
+This is the first paragraph. There are many like me, but this one is here.
+    </p>
+
+    <div id="outline-container-org5e68866" class="outline-2">
+
+      <h2 id="org5e68866">Nunc porta vulputate tellus.</h2>
+
+      <div class="outline-text-2" id="text-org5e68866">
+
+        <p>
+Praesent augue.  Suspendisse potenti.  Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In id erat non orci commodo lobortis.  Proin neque massa, cursus ut, gravida ut, lobortis eget, lacus.  Sed diam.  Praesent fermentum tempor tellus.  Nullam tempus.  Mauris ac felis vel velit tristique imperdiet.  Donec at pede.  Etiam vel neque nec dui dignissim bibendum.  Vivamus id enim.  Phasellus neque orci, porta a, aliquet quis, semper a, massa.
+        </p>
+      </div>
+
+      <div id="outline-container-org7c69738" class="outline-3">
+
+        <h3 id="org7c69738">Ipsum Lorum</h3>
+
+        <div class="outline-text-3" id="text-org7c69738">
+
+          <p>
+Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.  Nunc porta vulputate tellus.  Nunc rutrum turpis sed pede.  Sed bibendum.  Aliquam posuere.  Nunc aliquet, augue nec adipiscing interdum, lacus tellus malesuada massa, quis varius mi purus non odio.  Pellentesque condimentum, magna ut suscipit hendrerit, ipsum augue ornare nulla, non luctus diam neque sit amet urna.  Curabitur vulputate vestibulum lorem.  Fusce sagittis, libero non molestie mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia eros.  Sed id ligula quis est convallis tempor.  Curabitur lacinia pulvinar nibh.  Nam a sapien.
+          </p>
+        </div>
+
+        <div id="outline-container-org931a3d6" class="outline-4">
+
+          <h4 id="org931a3d6">Aliquam erat volutpat.</h4>
+
+          <div class="outline-text-4" id="text-org931a3d6">
+
+            <p>
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl.
+            </p>
+
+
+            <table>
+              <colgroup>
+                <col class="org-left" />
+                <col class="org-left" />
+                <col class="org-left" />
+                <col class="org-left" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col" class="org-left">Nunc</th>
+
+                  <th scope="col" class="org-left">porta</th>
+
+                  <th scope="col" class="org-left">vulputate</th>
+
+                  <th scope="col" class="org-left">Tellus</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="org-left"> </td>
+
+                  <td class="org-left"> </td>
+
+                  <td class="org-left"> </td>
+
+                  <td class="org-left"> </td>
+                </tr>
+                <tr>
+                  <td class="org-left">1</td>
+
+                  <td class="org-left">2</td>
+
+                  <td class="org-left">3</td>
+
+                  <td class="org-left">4!</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td class="org-left">x</td>
+
+                  <td class="org-left">x</td>
+
+                  <td class="org-left">x</td>
+
+                  <td class="org-left">x</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td class="org-left">5</td>
+
+                  <td class="org-left">6</td>
+
+                  <td class="org-left">7</td>
+
+                  <td class="org-left">8</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="outline-container-orgd36510e" class="outline-2">
+
+      <h2 id="orgd36510e">Nunc porta vulputate tellus.</h2>
+
+      <div class="outline-text-2" id="text-orgd36510e">
+
+        <p>
+Pellentesque dapibus suscipit ligula.  Donec posuere augue in quam.  Etiam vel tortor sodales tellus ultricies commodo.  Suspendisse potenti.  Aenean in sem ac leo mollis blandit.  Donec neque quam, dignissim in, mollis nec, sagittis eu, wisi.  Phasellus lacus.  Etiam laoreet quam sed arcu.  Phasellus at dui in ligula mollis ultricies.  Integer placerat tristique nisl.  Praesent augue.  Fusce commodo.  Vestibulum convallis, lorem a tempus semper, dui dui euismod elit, vitae placerat urna tortor vitae lacus.  Nullam libero mauris, consequat quis, varius et, dictum id, arcu.  Mauris mollis tincidunt felis.  Aliquam feugiat tellus ut neque.  Nulla facilisis, risus a rhoncus fermentum, tellus tellus lacinia purus, et dictum nunc justo sit amet elit.
+        </p>
+
+
+
+        <p>
+TOC:2 
+        </p>
+
+        <div class="org-src-container">
+
+          <pre class="src src-html">&lt;
+            <span class="org-keyword">?xml</span> 
+            <span class="org-variable-name">version</span>=&quot;1.0&quot; 
+            <span class="org-variable-name">encoding</span>=&quot;utf-8&quot;?&gt;
+&lt;
+            <span class="org-keyword">!DOCTYPE</span> html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
+&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
+&lt;
+            <span class="org-function-name">html</span> 
+            <span class="org-variable-name">xmlns</span>=
+            <span class="org-string">&quot;http://www.w3.org/1999/xhtml&quot;</span> 
+            <span class="org-variable-name">lang</span>=
+            <span class="org-string">&quot;en&quot;</span> 
+            <span class="org-sgml-namespace">xml</span>:
+            <span class="org-variable-name">lang</span>=
+            <span class="org-string">&quot;en&quot;</span>&gt;
+&lt;
+            <span class="org-function-name">head</span>&gt;
+
+            <span class="org-comment-delimiter">&lt;!-- </span>
+            <span class="org-comment">2025-07-13 Sun 11:58</span>
+            <span class="org-comment-delimiter"> --&gt;</span>
+&lt;
+            <span class="org-function-name">meta</span> 
+            <span class="org-variable-name">http-equiv</span>=
+            <span class="org-string">&quot;Content-Type&quot;</span> 
+            <span class="org-variable-name">content</span>=
+            <span class="org-string">&quot;text/html;charset=utf-8&quot;</span> /&gt;
+&lt;
+            <span class="org-function-name">meta</span> 
+            <span class="org-variable-name">name</span>=
+            <span class="org-string">&quot;viewport&quot;</span> 
+            <span class="org-variable-name">content</span>=
+            <span class="org-string">&quot;width=device-width, initial-scale=1&quot;</span> /&gt;
+&lt;
+            <span class="org-function-name">title</span>&gt;
+            <span class="org-underline">
+              <span class="org-bold">Org Sample Text</span>
+            </span>&lt;/
+            <span class="org-function-name">title</span>&gt;
+&lt;
+            <span class="org-function-name">meta</span> 
+            <span class="org-variable-name">name</span>=
+            <span class="org-string">&quot;author&quot;</span> 
+            <span class="org-variable-name">content</span>=
+            <span class="org-string">&quot;Me&quot;</span> /&gt;
+&lt;
+            <span class="org-function-name">meta</span> 
+            <span class="org-variable-name">name</span>=
+            <span class="org-string">&quot;generator&quot;</span> 
+            <span class="org-variable-name">content</span>=
+            <span class="org-string">&quot;Org Mode&quot;</span> /&gt;
+&lt;
+            <span class="org-function-name">style</span> 
+            <span class="org-variable-name">type</span>=
+            <span class="org-string">&quot;text/css&quot;</span>&gt;
+
+
+            <span class="org-comment-delimiter">&lt;!-- </span>
+            <span class="org-comment">Default CSS</span>
+            <span class="org-comment-delimiter"> --&gt;</span>
+
+&lt;/
+            <span class="org-function-name">style</span>&gt;
+&lt;/
+            <span class="org-function-name">head</span>&gt;
+&lt;
+            <span class="org-function-name">body</span>&gt;
+
+
+            <span class="org-comment-delimiter">&lt;!-- </span>
+            <span class="org-comment">TOC</span>
+            <span class="org-comment-delimiter"> --&gt;</span>
+
+&lt;
+            <span class="org-function-name">div</span> 
+            <span class="org-variable-name">id</span>=
+            <span class="org-string">&quot;content&quot;</span> 
+            <span class="org-variable-name">class</span>=
+            <span class="org-string">&quot;content&quot;</span>&gt;
+&lt;
+            <span class="org-function-name">h1</span> 
+            <span class="org-variable-name">class</span>=
+            <span class="org-string">&quot;title&quot;</span>&gt;
+            <span class="org-underline">
+              <span class="org-bold">I hate HTML</span>
+            </span>&lt;/
+            <span class="org-function-name">h1</span>&gt;
+&lt;
+            <span class="org-function-name">div</span> 
+            <span class="org-variable-name">id</span>=
+            <span class="org-string">&quot;table-of-contents&quot;</span> 
+            <span class="org-variable-name">role</span>=
+            <span class="org-string">&quot;doc-toc&quot;</span>&gt;
+&lt;
+            <span class="org-function-name">h2</span>&gt;
+            <span class="org-underline">
+              <span class="org-bold-italic">Table of Contents</span>
+            </span>&lt;/
+            <span class="org-function-name">h2</span>&gt;
+&lt;
+            <span class="org-function-name">div</span> 
+            <span class="org-variable-name">id</span>=
+            <span class="org-string">&quot;text-table-of-contents&quot;</span> 
+            <span class="org-variable-name">role</span>=
+            <span class="org-string">&quot;doc-toc&quot;</span>&gt;
+&lt;
+            <span class="org-function-name">ul</span>&gt;
+&lt;
+            <span class="org-function-name">li</span>&gt;&lt;
+            <span class="org-function-name">a</span> 
+            <span class="org-variable-name">href</span>=
+            <span class="org-string">&quot;#org431f7ac&quot;</span>&gt;1. Heading 1 - Nunc porta vulputate tellus.&lt;/
+            <span class="org-function-name">a</span>&gt;
+&lt;
+            <span class="org-function-name">ul</span>&gt;
+&lt;
+            <span class="org-function-name">li</span>&gt;&lt;
+            <span class="org-function-name">a</span> 
+            <span class="org-variable-name">href</span>=
+            <span class="org-string">&quot;#org3b423d9&quot;</span>&gt;1.1. Heading 2&lt;/
+            <span class="org-function-name">a</span>&gt;&lt;/
+            <span class="org-function-name">li</span>&gt;
+&lt;/
+            <span class="org-function-name">ul</span>&gt;
+&lt;/
+            <span class="org-function-name">li</span>&gt;
+&lt;
+            <span class="org-function-name">li</span>&gt;&lt;
+            <span class="org-function-name">a</span> 
+            <span class="org-variable-name">href</span>=
+            <span class="org-string">&quot;#org2a9961b&quot;</span>&gt;2. Heading 3 - Nunc porta vulputate tellus.&lt;/
+            <span class="org-function-name">a</span>&gt;&lt;/
+            <span class="org-function-name">li</span>&gt;
+&lt;/
+            <span class="org-function-name">ul</span>&gt;
+&lt;/
+            <span class="org-function-name">div</span>&gt;
+&lt;/
+            <span class="org-function-name">div</span>&gt;
+
+
+            <span class="org-comment-delimiter">&lt;!-- </span>
+            <span class="org-comment">/TOC</span>
+            <span class="org-comment-delimiter"> --&gt;</span>
+
+
+            <span class="org-comment-delimiter">&lt;!-- </span>
+            <span class="org-comment">MAIN</span>
+            <span class="org-comment-delimiter"> --&gt;</span>
+&lt;
+            <span class="org-function-name">div</span> 
+            <span class="org-variable-name">id</span>=
+            <span class="org-string">&quot;outline-container-org431f7ac&quot;</span> 
+            <span class="org-variable-name">class</span>=
+            <span class="org-string">&quot;outline-2&quot;</span>&gt;
+&lt;
+            <span class="org-function-name">h2</span> 
+            <span class="org-variable-name">id</span>=
+            <span class="org-string">&quot;org431f7ac&quot;</span>&gt;&lt;
+            <span class="org-function-name">span</span> 
+            <span class="org-variable-name">class</span>=
+            <span class="org-string">&quot;section-number-2&quot;</span>&gt;1.&lt;/
+            <span class="org-function-name">span</span>&gt; Heading 1 - Nunc porta vulputate tellus.&lt;/
+            <span class="org-function-name">h2</span>&gt;
+&lt;
+            <span class="org-function-name">div</span> 
+            <span class="org-variable-name">class</span>=
+            <span class="org-string">&quot;outline-text-2&quot;</span> 
+            <span class="org-variable-name">id</span>=
+            <span class="org-string">&quot;text-1&quot;</span>&gt;
+&lt;
+            <span class="org-function-name">p</span>&gt;
+sdlk;jfkd;lsjfskfd
+&lt;/
+            <span class="org-function-name">p</span>&gt;
+&lt;/
+            <span class="org-function-name">div</span>&gt;
+&lt;
+            <span class="org-function-name">div</span> 
+            <span class="org-variable-name">id</span>=
+            <span class="org-string">&quot;outline-container-org3b423d9&quot;</span> 
+            <span class="org-variable-name">class</span>=
+            <span class="org-string">&quot;outline-3&quot;</span>&gt;
+&lt;
+            <span class="org-function-name">h3</span> 
+            <span class="org-variable-name">id</span>=
+            <span class="org-string">&quot;org3b423d9&quot;</span>&gt;&lt;
+            <span class="org-function-name">span</span> 
+            <span class="org-variable-name">class</span>=
+            <span class="org-string">&quot;section-number-3&quot;</span>&gt;1.1.&lt;/
+            <span class="org-function-name">span</span>&gt; Heading 2&lt;/
+            <span class="org-function-name">h3</span>&gt;
+&lt;
+            <span class="org-function-name">div</span> 
+            <span class="org-variable-name">class</span>=
+            <span class="org-string">&quot;outline-text-3&quot;</span> 
+            <span class="org-variable-name">id</span>=
+            <span class="org-string">&quot;text-1-1&quot;</span>&gt;
+&lt;
+            <span class="org-function-name">p</span>&gt;
+Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.  Nunc porta vulputate tellus.  Nunc rutrum turpis sed pede.  Sed bibendum.  Aliquam posuere.  Nunc aliquet, augue nec adipiscing interdum, lacus tellus malesuada massa, quis varius mi purus non odio.  Pellentesque condimentum, magna ut suscipit hendrerit, ipsum augue ornare nulla, non luctus diam neque sit amet urna.  Curabitur vulputate vestibulum lorem.  Fusce sagittis, libero non molestie mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia eros.  Sed id ligula quis est convallis tempor.  Curabitur lacinia pulvinar nibh.  Nam a sapien.
+&lt;/
+            <span class="org-function-name">p</span>&gt;
+&lt;/
+            <span class="org-function-name">div</span>&gt;
+&lt;
+            <span class="org-function-name">div</span> 
+            <span class="org-variable-name">id</span>=
+            <span class="org-string">&quot;outline-container-orgb975280&quot;</span> 
+            <span class="org-variable-name">class</span>=
+            <span class="org-string">&quot;outline-4&quot;</span>&gt;
+&lt;
+            <span class="org-function-name">h4</span> 
+            <span class="org-variable-name">id</span>=
+            <span class="org-string">&quot;orgb975280&quot;</span>&gt;&lt;
+            <span class="org-function-name">span</span> 
+            <span class="org-variable-name">class</span>=
+            <span class="org-string">&quot;section-number-4&quot;</span>&gt;1.1.1.&lt;/
+            <span class="org-function-name">span</span>&gt; Heading 3 - Aliquam erat volutpat.&lt;/
+            <span class="org-function-name">h4</span>&gt;
+&lt;
+            <span class="org-function-name">div</span> 
+            <span class="org-variable-name">class</span>=
+            <span class="org-string">&quot;outline-text-4&quot;</span> 
+            <span class="org-variable-name">id</span>=
+            <span class="org-string">&quot;text-1-1-1&quot;</span>&gt;
+&lt;
+            <span class="org-function-name">p</span>&gt;
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl.
+&lt;/
+            <span class="org-function-name">p</span>&gt;
+&lt;/
+            <span class="org-function-name">div</span>&gt;
+&lt;/
+            <span class="org-function-name">div</span>&gt;
+&lt;/
+            <span class="org-function-name">div</span>&gt;
+&lt;/
+            <span class="org-function-name">div</span>&gt;
+&lt;
+            <span class="org-function-name">div</span> 
+            <span class="org-variable-name">id</span>=
+            <span class="org-string">&quot;outline-container-org2a9961b&quot;</span> 
+            <span class="org-variable-name">class</span>=
+            <span class="org-string">&quot;outline-2&quot;</span>&gt;
+&lt;
+            <span class="org-function-name">h2</span> 
+            <span class="org-variable-name">id</span>=
+            <span class="org-string">&quot;org2a9961b&quot;</span>&gt;&lt;
+            <span class="org-function-name">span</span> 
+            <span class="org-variable-name">class</span>=
+            <span class="org-string">&quot;section-number-2&quot;</span>&gt;2.&lt;/
+            <span class="org-function-name">span</span>&gt; Heading 3 - Nunc porta vulputate tellus.&lt;/
+            <span class="org-function-name">h2</span>&gt;
+&lt;
+            <span class="org-function-name">div</span> 
+            <span class="org-variable-name">class</span>=
+            <span class="org-string">&quot;outline-text-2&quot;</span> 
+            <span class="org-variable-name">id</span>=
+            <span class="org-string">&quot;text-2&quot;</span>&gt;
+&lt;
+            <span class="org-function-name">p</span>&gt;
+Pellentesque dapibus suscipit ligula.  Donec posuere augue in quam.  Etiam vel tortor sodales tellus ultricies commodo.  Suspendisse potenti.  Aenean in sem ac leo mollis blandit.  Donec neque quam, dignissim in, mollis nec, sagittis eu, wisi.  Phasellus lacus.  Etiam laoreet quam sed arcu.  Phasellus at dui in ligula mollis ultricies.  Integer placerat tristique nisl.  Praesent augue.  Fusce commodo.  Vestibulum convallis, lorem a tempus semper, dui dui euismod elit, vitae placerat urna tortor vitae lacus.  Nullam libero mauris, consequat quis, varius et, dictum id, arcu.  Mauris mollis tincidunt felis.  Aliquam feugiat tellus ut neque.  Nulla facilisis, risus a rhoncus fermentum, tellus tellus lacinia purus, et dictum nunc justo sit amet elit.
+&lt;/
+            <span class="org-function-name">p</span>&gt;
+&lt;/
+            <span class="org-function-name">div</span>&gt;
+&lt;/
+            <span class="org-function-name">div</span>&gt;
+&lt;/
+            <span class="org-function-name">div</span>&gt;
+
+            <span class="org-comment-delimiter">&lt;!-- </span>
+            <span class="org-comment">/MAIN</span>
+            <span class="org-comment-delimiter"> --&gt;</span>
+&lt;
+            <span class="org-function-name">div</span> 
+            <span class="org-variable-name">id</span>=
+            <span class="org-string">&quot;postamble&quot;</span> 
+            <span class="org-variable-name">class</span>=
+            <span class="org-string">&quot;status&quot;</span>&gt;
+&lt;
+            <span class="org-function-name">p</span> 
+            <span class="org-variable-name">class</span>=
+            <span class="org-string">&quot;author&quot;</span>&gt;Author: Me&lt;/
+            <span class="org-function-name">p</span>&gt;
+&lt;
+            <span class="org-function-name">p</span> 
+            <span class="org-variable-name">class</span>=
+            <span class="org-string">&quot;date&quot;</span>&gt;Created: 2025-07-13 Sun 11:58&lt;/
+            <span class="org-function-name">p</span>&gt;
+&lt;
+            <span class="org-function-name">p</span> 
+            <span class="org-variable-name">class</span>=
+            <span class="org-string">&quot;validation&quot;</span>&gt;&lt;
+            <span class="org-function-name">a</span> 
+            <span class="org-variable-name">href</span>=
+            <span class="org-string">&quot;https://validator.w3.org/check?uri=referer&quot;</span>&gt;Validate&lt;/
+            <span class="org-function-name">a</span>&gt;&lt;/
+            <span class="org-function-name">p</span>&gt;
+&lt;/
+            <span class="org-function-name">div</span>&gt;
+&lt;/
+            <span class="org-function-name">body</span>&gt;
+&lt;/
+            <span class="org-function-name">html</span>&gt;
+          </pre>
+        </div>
+
+
+
+        <div class="org-src-container">
+
+          <pre class="src src-emacs-lisp">
+            <span class="org-comment-delimiter">;; </span>
+            <span class="org-comment">org-sidenote.el --- Convert Org footnotes to simple tufte style sidenotes
+            </span>
+
+            <span class="org-rainbow-delimiters-depth-1">(</span>
+            <span class="org-keyword">require</span> '
+            <span class="org-constant">ox-html</span>
+            <span class="org-rainbow-delimiters-depth-1">)</span>
+
+
+            <span class="org-rainbow-delimiters-depth-1">(</span>
+            <span class="org-keyword">defgroup</span> 
+            <span class="org-type">org-sidenote</span> nil
+  
+            <span class="org-doc">&quot;Options for exporting Org files with sidenotes.&quot;</span>
+  
+            <span class="org-builtin">:tag</span> 
+            <span class="org-string">&quot;Org Sidenote&quot;</span>
+  
+            <span class="org-builtin">:group</span> 'org-export
+            <span class="org-rainbow-delimiters-depth-1">)</span>
+
+
+            <span class="org-rainbow-delimiters-depth-1">(</span>
+            <span class="org-keyword">defun</span> 
+            <span class="org-function-name">org-sidenote--get-footnote-definition</span> 
+            <span class="org-rainbow-delimiters-depth-2">(</span>footnote-reference info
+            <span class="org-rainbow-delimiters-depth-2">)</span>
+  
+            <span class="org-doc">&quot;Extract the footnote definition for FOOTNOTE-REFERENCE using INFO.&quot;</span>
+  
+            <span class="org-rainbow-delimiters-depth-2">(</span>
+            <span class="org-keyword">let</span> 
+            <span class="org-rainbow-delimiters-depth-3">(</span>
+            <span class="org-rainbow-delimiters-depth-4">(</span>definition 
+            <span class="org-rainbow-delimiters-depth-5">(</span>org-export-get-footnote-definition footnote-reference info
+            <span class="org-rainbow-delimiters-depth-5">)</span>
+            <span class="org-rainbow-delimiters-depth-4">)</span>
+            <span class="org-rainbow-delimiters-depth-3">)</span>
+    
+            <span class="org-rainbow-delimiters-depth-3">(</span>
+            <span class="org-keyword">when</span> definition
+      
+            <span class="org-comment-delimiter">;; </span>
+            <span class="org-comment">Get the exported content and strip paragraph tags
+            </span>      
+            <span class="org-rainbow-delimiters-depth-4">(</span>
+            <span class="org-keyword">let</span> 
+            <span class="org-rainbow-delimiters-depth-5">(</span>
+            <span class="org-rainbow-delimiters-depth-6">(</span>content 
+            <span class="org-rainbow-delimiters-depth-7">(</span>org-trim 
+            <span class="org-rainbow-delimiters-depth-8">(</span>org-export-data definition info
+            <span class="org-rainbow-delimiters-depth-8">)</span>
+            <span class="org-rainbow-delimiters-depth-7">)</span>
+            <span class="org-rainbow-delimiters-depth-6">)</span>
+            <span class="org-rainbow-delimiters-depth-5">)</span>
+        
+            <span class="org-comment-delimiter">;; </span>
+            <span class="org-comment">Remove wrapping &lt;p class=&quot;footpara&quot;&gt; tags if present
+            </span>        
+            <span class="org-rainbow-delimiters-depth-5">(</span>replace-regexp-in-string
+         
+            <span class="org-string">&quot;\\`&lt;p class=\&quot;footpara\&quot;&gt;</span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-backslash">\\</span>
+            </span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-construct">(</span>
+            </span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-backslash">\\</span>
+            </span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-construct">(?:</span>
+            </span>
+            <span class="org-string">.</span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-backslash">\\</span>
+            </span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-construct">|</span>
+            </span>
+            <span class="org-string">\n</span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-backslash">\\</span>
+            </span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-construct">)</span>
+            </span>
+            <span class="org-string">*?</span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-backslash">\\</span>
+            </span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-construct">)</span>
+            </span>
+            <span class="org-string">&lt;/p&gt;\\'&quot;</span>
+         
+            <span class="org-string">&quot;\\1&quot;</span>
+         content
+            <span class="org-rainbow-delimiters-depth-5">)</span>
+            <span class="org-rainbow-delimiters-depth-4">)</span>
+            <span class="org-rainbow-delimiters-depth-3">)</span>
+            <span class="org-rainbow-delimiters-depth-2">)</span>
+            <span class="org-rainbow-delimiters-depth-1">)</span>
+
+
+            <span class="org-rainbow-delimiters-depth-1">(</span>
+            <span class="org-keyword">defun</span> 
+            <span class="org-function-name">org-sidenote-footnote-reference</span> 
+            <span class="org-rainbow-delimiters-depth-2">(</span>footnote-reference _contents info
+            <span class="org-rainbow-delimiters-depth-2">)</span>
+  
+            <span class="org-doc">&quot;Transcode a FOOTNOTE-REFERENCE element into a sidenote.
+CONTENTS is nil.  INFO is a plist holding contextual information.&quot;</span>
+  
+            <span class="org-rainbow-delimiters-depth-2">(</span>
+            <span class="org-keyword">let*</span> 
+            <span class="org-rainbow-delimiters-depth-3">(</span>
+            <span class="org-rainbow-delimiters-depth-4">(</span>number 
+            <span class="org-rainbow-delimiters-depth-5">(</span>org-export-get-footnote-number footnote-reference info
+            <span class="org-rainbow-delimiters-depth-5">)</span>
+            <span class="org-rainbow-delimiters-depth-4">)</span>
+         
+            <span class="org-rainbow-delimiters-depth-4">(</span>definition 
+            <span class="org-rainbow-delimiters-depth-5">(</span>org-sidenote--get-footnote-definition footnote-reference info
+            <span class="org-rainbow-delimiters-depth-5">)</span>
+            <span class="org-rainbow-delimiters-depth-4">)</span>
+         
+            <span class="org-rainbow-delimiters-depth-4">(</span>id 
+            <span class="org-rainbow-delimiters-depth-5">(</span>format 
+            <span class="org-string">&quot;sn-%d&quot;</span> number
+            <span class="org-rainbow-delimiters-depth-5">)</span>
+            <span class="org-rainbow-delimiters-depth-4">)</span>
+            <span class="org-rainbow-delimiters-depth-3">)</span>
+
+    
+            <span class="org-rainbow-delimiters-depth-3">(</span>
+            <span class="org-keyword">if</span> definition
+        
+            <span class="org-rainbow-delimiters-depth-4">(</span>format 
+            <span class="org-string">&quot;&lt;label for=\&quot;%s\&quot; class=\&quot;margin-toggle sidenote-number\&quot;&gt;&lt;/label&gt;&lt;input type=\&quot;checkbox\&quot; id=\&quot;%s\&quot; class=\&quot;margin-toggle\&quot;/&gt;&lt;span class=\&quot;sidenote\&quot;&gt;%s&lt;/span&gt;&quot;</span>
+                id id definition
+            <span class="org-rainbow-delimiters-depth-4">)</span>
+      
+            <span class="org-comment-delimiter">;; </span>
+            <span class="org-comment">Fallback if no definition found
+            </span>      
+            <span class="org-rainbow-delimiters-depth-4">(</span>format 
+            <span class="org-string">&quot;&lt;sup&gt;%d&lt;/sup&gt;&quot;</span> number
+            <span class="org-rainbow-delimiters-depth-4">)</span>
+            <span class="org-rainbow-delimiters-depth-3">)</span>
+            <span class="org-rainbow-delimiters-depth-2">)</span>
+            <span class="org-rainbow-delimiters-depth-1">)</span>
+
+
+            <span class="org-rainbow-delimiters-depth-1">(</span>
+            <span class="org-keyword">defun</span> 
+            <span class="org-function-name">org-sidenote-fix-toc-html</span> 
+            <span class="org-rainbow-delimiters-depth-2">(</span>html
+            <span class="org-rainbow-delimiters-depth-2">)</span>
+  
+            <span class="org-doc">&quot;Fix Org's malformed TOC HTML structure.&quot;</span>
+  
+            <span class="org-rainbow-delimiters-depth-2">(</span>replace-regexp-in-string 
+   
+            <span class="org-string">&quot;</span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-backslash">\\</span>
+            </span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-construct">(</span>
+            </span>
+            <span class="org-string">&lt;ul&gt;[[:space:]\n]*&lt;li&gt;.*?&lt;/li&gt;[[:space:]\n]*&lt;/ul&gt;</span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-backslash">\\</span>
+            </span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-construct">)</span>
+            </span>
+            <span class="org-string">[[:space:]\n]*&lt;/li&gt;&quot;</span>
+   
+            <span class="org-string">&quot;\\1&quot;</span>
+   html t t
+            <span class="org-rainbow-delimiters-depth-2">)</span>
+            <span class="org-rainbow-delimiters-depth-1">)</span>
+
+
+
+
+            <span class="org-rainbow-delimiters-depth-1">(</span>
+            <span class="org-keyword">defun</span> 
+            <span class="org-function-name">org-sidenote-template</span> 
+            <span class="org-rainbow-delimiters-depth-2">(</span>contents info
+            <span class="org-rainbow-delimiters-depth-2">)</span>
+  
+            <span class="org-doc">&quot;Return complete document string after HTML conversion.
+CONTENTS is the transcoded contents string. INFO is a plist
+holding export options.&quot;</span>
+  
+            <span class="org-rainbow-delimiters-depth-2">(</span>
+            <span class="org-keyword">let</span> 
+            <span class="org-rainbow-delimiters-depth-3">(</span>
+            <span class="org-rainbow-delimiters-depth-4">(</span>html-template 
+            <span class="org-rainbow-delimiters-depth-5">(</span>org-html-template contents info
+            <span class="org-rainbow-delimiters-depth-5">)</span>
+            <span class="org-rainbow-delimiters-depth-4">)</span>
+            <span class="org-rainbow-delimiters-depth-3">)</span>
+    
+            <span class="org-comment-delimiter">;; </span>
+            <span class="org-comment">Wrap title in header tags
+            </span>    
+            <span class="org-rainbow-delimiters-depth-3">(</span>
+            <span class="org-keyword">setq</span> html-template
+          
+            <span class="org-rainbow-delimiters-depth-4">(</span>replace-regexp-in-string
+           
+            <span class="org-string">&quot;&lt;div id=\&quot;content\&quot;[</span>
+            <span class="org-string">
+              <span class="org-negation-char">^</span>
+            </span>
+            <span class="org-string">&gt;]*&gt;\\s-*&lt;h1 class=\&quot;title\&quot;&gt;&quot;</span>
+           
+            <span class="org-string">&quot;&lt;div id=\&quot;content\&quot;&gt;&lt;header&gt;&lt;h1 class=\&quot;title\&quot;&gt;&quot;</span>
+           html
+            <span class="org-rainbow-delimiters-depth-4">)</span>
+            <span class="org-rainbow-delimiters-depth-3">)</span>
+    
+            <span class="org-comment-delimiter">;; </span>
+            <span class="org-comment">Wrap TOC in Nav and main tags
+            </span>    
+            <span class="org-rainbow-delimiters-depth-3">(</span>
+            <span class="org-keyword">setq</span> html-template
+          
+            <span class="org-rainbow-delimiters-depth-4">(</span>replace-regexp-in-string
+           
+            <span class="org-rainbow-delimiters-depth-5">(</span>concat 
+            <span class="org-string">&quot;&lt;div id=\&quot;table-of-contents\&quot; role=\&quot;doc-toc\&quot;&gt;\n&quot;</span>
+                   
+            <span class="org-string">&quot; *&lt;h2&gt;Table of Contents&lt;/h2&gt;\n&quot;</span>
+                   
+            <span class="org-string">&quot; *&lt;div id=\&quot;text-table-of-contents\&quot; role=\&quot;doc-toc\&quot;&gt;\n&quot;</span>
+                   
+            <span class="org-string">&quot; *</span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-backslash">\\</span>
+            </span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-construct">(</span>
+            </span>
+            <span class="org-string">&lt;ul&gt;</span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-backslash">\\</span>
+            </span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-construct">(?:</span>
+            </span>
+            <span class="org-string">.</span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-backslash">\\</span>
+            </span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-construct">|</span>
+            </span>
+            <span class="org-string">\n</span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-backslash">\\</span>
+            </span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-construct">)</span>
+            </span>
+            <span class="org-string">*?&lt;/ul&gt;</span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-backslash">\\</span>
+            </span>
+            <span class="org-string">
+              <span class="org-regexp-grouping-construct">)</span>
+            </span>
+            <span class="org-string">\n&quot;</span>
+                   
+            <span class="org-string">&quot; *&lt;/div&gt;\n&quot;</span>
+                   
+            <span class="org-string">&quot; *&lt;/div&gt;&quot;</span>
+            <span class="org-rainbow-delimiters-depth-5">)</span>
+           
+            <span class="org-rainbow-delimiters-depth-5">(</span>concat 
+            <span class="org-string">&quot;&lt;nav id=\&quot;table-of-contents\&quot; role=\&quot;doc-toc\&quot;&gt;\n&quot;</span>
+                   
+            <span class="org-string">&quot; *&lt;input type=\&quot;checkbox\&quot; id=\&quot;contents\&quot;&gt;\n&quot;</span>
+                   
+            <span class="org-string">&quot; *\\1\n&quot;</span>
+                   
+            <span class="org-string">&quot; *&lt;/nav&gt;\n&quot;</span>
+                   
+            <span class="org-string">&quot; *&lt;main&gt;&quot;</span>
+            <span class="org-rainbow-delimiters-depth-5">)</span>
+           html t t
+            <span class="org-rainbow-delimiters-depth-4">)</span>
+            <span class="org-rainbow-delimiters-depth-3">)</span>
+    
+            <span class="org-comment-delimiter">;; </span>
+            <span class="org-comment">Add closing main tag
+            </span>
+    
+            <span class="org-rainbow-delimiters-depth-3">(</span>
+            <span class="org-keyword">setq</span> html-template
+      
+            <span class="org-rainbow-delimiters-depth-4">(</span>replace-regexp-in-string 
+            <span class="org-string">&quot;&lt;div id=\&quot;postamble\&quot; class=\&quot;status\&quot;&gt;&quot;</span> 
+            <span class="org-string">&quot;&lt;/main&gt;\n &lt;div id=\&quot;postamble\&quot; class=\&quot;status\&quot;&gt;&quot;</span> html
+            <span class="org-rainbow-delimiters-depth-4">)</span>
+            <span class="org-rainbow-delimiters-depth-3">)</span>
+            <span class="org-rainbow-delimiters-depth-2">)</span>
+            <span class="org-rainbow-delimiters-depth-1">)</span> 
+
+
+            <span class="org-comment-delimiter">;; </span>
+            <span class="org-comment">Define the custom export backend
+            </span>
+            <span class="org-rainbow-delimiters-depth-1">(</span>org-export-define-derived-backend 'sidenote 'html
+  
+            <span class="org-builtin">:translate-alist</span> '
+            <span class="org-rainbow-delimiters-depth-2">(</span>
+            <span class="org-rainbow-delimiters-depth-3">(</span>footnote-reference . org-sidenote-footnote-reference
+            <span class="org-rainbow-delimiters-depth-3">)</span>
+                     
+            <span class="org-rainbow-delimiters-depth-3">(</span>inner-template . org-sidenote-inner-template
+            <span class="org-rainbow-delimiters-depth-3">)</span>
+                     
+            <span class="org-rainbow-delimiters-depth-3">(</span>template . org-sidenote-template
+            <span class="org-rainbow-delimiters-depth-3">)</span>
+            <span class="org-rainbow-delimiters-depth-2">)</span>
+  
+            <span class="org-builtin">:options-alist</span>
+  '
+            <span class="org-rainbow-delimiters-depth-2">(</span>
+            <span class="org-rainbow-delimiters-depth-3">(</span>
+            <span class="org-builtin">:html-head-include-default-style</span> nil 
+            <span class="org-string">&quot;html-style&quot;</span> nil
+            <span class="org-rainbow-delimiters-depth-3">)</span>
+    
+            <span class="org-rainbow-delimiters-depth-3">(</span>
+            <span class="org-builtin">:html-head-include-scripts</span> nil 
+            <span class="org-string">&quot;html-scripts&quot;</span> nil
+            <span class="org-rainbow-delimiters-depth-3">)</span>
+            <span class="org-rainbow-delimiters-depth-2">)</span>
+  
+            <span class="org-builtin">:menu-entry</span>
+  '
+            <span class="org-rainbow-delimiters-depth-2">(</span>?s 
+            <span class="org-string">&quot;Export with sidenotes&quot;</span>
+       
+            <span class="org-rainbow-delimiters-depth-3">(</span>
+            <span class="org-rainbow-delimiters-depth-4">(</span>?h 
+            <span class="org-string">&quot;As HTML buffer&quot;</span> org-sidenote-export-to-html
+            <span class="org-rainbow-delimiters-depth-4">)</span>
+        
+            <span class="org-rainbow-delimiters-depth-4">(</span>?H 
+            <span class="org-string">&quot;As HTML file&quot;</span> org-sidenote-export-to-html-file
+            <span class="org-rainbow-delimiters-depth-4">)</span>
+        
+            <span class="org-rainbow-delimiters-depth-4">(</span>?o 
+            <span class="org-string">&quot;As HTML file and open&quot;</span>
+            
+            <span class="org-rainbow-delimiters-depth-5">(</span>
+            <span class="org-keyword">lambda</span> 
+            <span class="org-rainbow-delimiters-depth-6">(</span>a s v b
+            <span class="org-rainbow-delimiters-depth-6">)</span>
+              
+            <span class="org-rainbow-delimiters-depth-6">(</span>
+            <span class="org-keyword">if</span> a 
+            <span class="org-rainbow-delimiters-depth-7">(</span>org-sidenote-export-to-html-file t s v b
+            <span class="org-rainbow-delimiters-depth-7">)</span>
+                
+            <span class="org-rainbow-delimiters-depth-7">(</span>org-open-file 
+            <span class="org-rainbow-delimiters-depth-8">(</span>org-sidenote-export-to-html-file nil s v b
+            <span class="org-rainbow-delimiters-depth-8">)</span>
+            <span class="org-rainbow-delimiters-depth-7">)</span>
+            <span class="org-rainbow-delimiters-depth-6">)</span>
+            <span class="org-rainbow-delimiters-depth-5">)</span>
+            <span class="org-rainbow-delimiters-depth-4">)</span>
+            <span class="org-rainbow-delimiters-depth-3">)</span>
+            <span class="org-rainbow-delimiters-depth-2">)</span>
+            <span class="org-rainbow-delimiters-depth-1">)</span>
+
+
+            <span class="org-rainbow-delimiters-depth-1">(</span>
+            <span class="org-keyword">defun</span> 
+            <span class="org-function-name">org-sidenote-export-to-html</span> 
+            <span class="org-rainbow-delimiters-depth-2">(</span>
+            <span class="org-type">&amp;optional</span> async subtreep visible-only body-only ext-plist
+            <span class="org-rainbow-delimiters-depth-2">)</span>
+  
+            <span class="org-doc">&quot;Export current buffer to HTML buffer with sidenotes.&quot;</span>
+  
+            <span class="org-rainbow-delimiters-depth-2">(</span>
+            <span class="org-keyword">interactive</span>
+            <span class="org-rainbow-delimiters-depth-2">)</span>
+  
+            <span class="org-rainbow-delimiters-depth-2">(</span>org-export-to-buffer 'sidenote 
+            <span class="org-string">&quot;*Org Sidenote HTML Export*&quot;</span>
+    async subtreep visible-only body-only ext-plist 
+            <span class="org-rainbow-delimiters-depth-3">(</span>
+            <span class="org-keyword">lambda</span> 
+            <span class="org-rainbow-delimiters-depth-4">()</span> 
+            <span class="org-rainbow-delimiters-depth-4">(</span>html-mode
+            <span class="org-rainbow-delimiters-depth-4">)</span>
+            <span class="org-rainbow-delimiters-depth-3">)</span>
+            <span class="org-rainbow-delimiters-depth-2">)</span>
+            <span class="org-rainbow-delimiters-depth-1">)</span>
+
+
+            <span class="org-rainbow-delimiters-depth-1">(</span>
+            <span class="org-keyword">defun</span> 
+            <span class="org-function-name">org-sidenote-export-to-html-file</span> 
+            <span class="org-rainbow-delimiters-depth-2">(</span>
+            <span class="org-type">&amp;optional</span> async subtreep visible-only body-only ext-plist
+            <span class="org-rainbow-delimiters-depth-2">)</span>
+  
+            <span class="org-doc">&quot;Export current buffer to HTML file with sidenotes.&quot;</span>
+  
+            <span class="org-rainbow-delimiters-depth-2">(</span>
+            <span class="org-keyword">interactive</span>
+            <span class="org-rainbow-delimiters-depth-2">)</span>
+  
+            <span class="org-rainbow-delimiters-depth-2">(</span>
+            <span class="org-keyword">let</span> 
+            <span class="org-rainbow-delimiters-depth-3">(</span>
+            <span class="org-rainbow-delimiters-depth-4">(</span>file 
+            <span class="org-rainbow-delimiters-depth-5">(</span>org-export-output-file-name 
+            <span class="org-string">&quot;.html&quot;</span> subtreep
+            <span class="org-rainbow-delimiters-depth-5">)</span>
+            <span class="org-rainbow-delimiters-depth-4">)</span>
+            <span class="org-rainbow-delimiters-depth-3">)</span>
+    
+            <span class="org-rainbow-delimiters-depth-3">(</span>org-export-to-file 'sidenote file
+      async subtreep visible-only body-only ext-plist
+            <span class="org-rainbow-delimiters-depth-3">)</span>
+            <span class="org-rainbow-delimiters-depth-2">)</span>
+            <span class="org-rainbow-delimiters-depth-1">)</span>
+
+
+            <span class="org-rainbow-delimiters-depth-1">(</span>
+            <span class="org-keyword">provide</span> '
+            <span class="org-constant">org-sidenote</span>
+            <span class="org-rainbow-delimiters-depth-1">)</span>
+
+
+          </pre>
+        </div>
+
+
+
+
+        <div id="org842d994" class="figure">
+
+          <p>
+            <img src="generic-blog-1/example.svg" alt="example.svg" class="org-svg" />
+          </p>
+        </div>
+      </div>
+
+      <div id="outline-container-org1bd185b" class="outline-3">
+
+        <h3 id="org1bd185b">Sources</h3>
+
+        <div class="outline-text-3" id="text-org1bd185b">
+        </div>
+
+        <div id="outline-container-org4af59cf" class="outline-4">
+
+          <h4 id="org4af59cf">Data Visualisation</h4>
+
+          <div class="outline-text-4" id="text-org4af59cf">
+
+            <p>
+
+              <a href="http://motioninsocial.com/tufte/#discussion">http://motioninsocial.com/tufte/#discussion</a>
+
+              <a href="https://www.ajnisbet.com/blog/tufte-in-matplotlib">https://www.ajnisbet.com/blog/tufte-in-matplotlib</a>
+            </p>
+          </div>
+        </div>
+
+        <div id="outline-container-org8fdc01d" class="outline-4">
+
+          <h4 id="org8fdc01d">Recipe Workflow</h4>
+
+          <div class="outline-text-4" id="text-org8fdc01d">
+
+            <p>
+
+              <a href="https://github.com/coolwanglu/pdf2htmlEX">https://github.com/coolwanglu/pdf2htmlEX</a>
+            </p>
+          </div>
+        </div>
+
+        <div id="outline-container-org504875e" class="outline-4">
+
+          <h4 id="org504875e">Table Rendering Idea</h4>
+
+          <div class="outline-text-4" id="text-org504875e">
+
+            <p>
+
+              <a href="https://www.reddit.com/r/emacs/comments/d3a8or/pretty_org_tables_in_the_buffer_chapter_2_it/">https://www.reddit.com/r/emacs/comments/d3a8or/pretty_org_tables_in_the_buffer_chapter_2_it/</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="outline-container-orgf67b891" class="outline-3">
+
+        <h3 id="orgf67b891">
+          <span class="todo TODO">TODO</span> 
+        </h3>
+
+        <div class="outline-text-3" id="text-orgf67b891">
+
+          <ul class="org-ul">
+            <li class="off">
+              <code>[ ]</code> Etiam vel tortor sodales tellus ultricies commodo.
+            </li>
+
+            <li class="on">
+              <code>[X]</code> Fusce sagittis, libero non molestie mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia eros.
+            </li>
+
+            <li class="off">
+              <code>[ ]</code> Fusce commodo.
+            </li>
+
+            <li class="on">
+              <code>[X]</code> Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.
+            </li>
+
+            <li class="off">
+              <code>[ ]</code> Curabitur lacinia pulvinar nibh.
+            </li>
+          </ul>
+          <div class="org-src-container">
+
+            <pre class="src src-C">
+................................................................................
+................................................................................
+.....................................................=..........................
+....................................................O...........................
+...................................................7O...........................
+..................................................Z=............................
+.................................................~8.............................
+.................................................Z,.............................
+................................................OO..............................
+...............................................~O,..............................
+..............................................,O=...............................
+.........................................D....$Z,...............................
+.................................,......NM...~O=................................
+...............................:DMN....ZNMM.,OO,................................
+...............................DDMMDOZZOODN8OZ~.................................
+.......................,7$ZOZODD8MMMDDDDDDDOOOD=................................
+.....................ZOZZZZZZZ8DD8MMMMDD88D8D8888D8.............................
+.................,?OZZZZZZZZZZ8DD8NMMMD8888888888888Z,..........................
+...............=OZZZZZZZZZZZZZ8D88DN8888888ODD888DD8888D8DI:....................
+.............+8ZZZZZZZZZZZZZZZ8D888888888DNMMMMN88888888888888888888D:..........
+...........?OZZZZZZZZZZZZZZZZZZDD888888888DDDNNNN88888888888888888888D..........
+.........,8ZZZZZZZZZZZZZZZZZZZZODD888888888DDDDD888888888888888888888D$.........
+........:ZZZZZZZZZZZZZZZZZZZZZZZODD888888888888888888888888888888888D,..........
+.......?OZZZZZZZZZZZZZZZZZZZZZZZZZDD8888888888888888888888888888DNM=............
+......,
+              <span class="org-type">ZZZZZZZZZZZZZZZZZZZZZZZZO8O8DD88888888888888888888888888NMMMD</span>............
+......
+              <span class="org-variable-name">OZZZZZZZZZZZZZZZZZZZZZZZZODDD8ND88888888888D8</span>,$DDD8DD8DD888D8.............
+.....:ZZZZZZZZZZZZZZZZZZZOOO88OZ8DDDDD8888D8DDO.................................
+.....OZZZZZZZZZZZZZZZZZZZDDDNDD88DDDDD88O.......................................
+.....OZZZZZZZZZZZZZZZZZZZ8DDDDDDODDDND88O.......................................
+.....OZZZZZZZZZZZZZZZZZZZZDD88DD8DDDD888~.......................................
+.....OZZZZZZZZZZZZZZZZZZZZODD8DDDD888888........................................
+.....ZZZZZZZZZZZZZZZZZO8D8OODDDNND88888D........................................
+.....:ZZZZZZZZZZZZZZZZZ8DDD888DDD888888D~.......................................
+......ZZZZZZZZZZZZZZZOZODD8DDDDND8888888O.......................................
+......+ZZZZZZZZZZZZZ88DO8DD888DDD88888888~......................................
+.......OZZZZZZZZZZZO8DDDDDND888888888888888,....................................
+.......~OZZZZZZZZOOODDD8DDDND88888888888888888..................................
+........:OZZZO8OO8D8DD88D888888888888888888888DZ................................
+..........=OZDDD8DDDDD88888888888888888888888888D$..............................
+............~DDDNDDDDD8888888888888888888888888888D,............................
+..............NDDDDDDD888O8888888888888888888888888D$...........................
+...............:D88D8888888888888888888888888888888888..........................
+.................D888888888888888888888888888888888888D.........................
+...................O8888888888888DD8DD888DD8888888888888........................
+........................+$87Z~.................$88888888D.......................
+...................................................~888888......................
+......................................................,7DDO.....................
+.........................................................=D.....................
+...........................................................:....................
+................................................................................
+................................................................................
+................................................................................
+
+
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+</main>
+</body>
+</html>

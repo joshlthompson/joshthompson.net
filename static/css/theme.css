@@ -1,0 +1,1433 @@
+
+/* ========================== Global settings ============================== */
+
+/*---------  Fonts --------*/
+
+/* Font */
+@font-face {
+    font-family: 'New York';
+    src: url('/static/fonts/prose/NewYorkMedium-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/static/fonts/heading/Inter-SemiBold.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 600;
+    font-variant-caps: all-small-caps;
+    font-feature-settings: "cpsp" 1; /* inter-glyph spacing for all-caps */
+}
+
+@font-face {
+    font-family: 'Inter-Regular';
+    src: url('/static/fonts/heading/Inter-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-weight:  400;
+}
+
+@font-face {
+  font-family: 'JetBrainsMono';
+  src: url('/static/fonts/code/JetBrainsMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'JetBrainsMono';
+  src: url('/static/fonts/code/JetBrainsMono-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'JetBrainsMono';
+  src: url('/static/fonts/code/JetBrainsMono-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+:root {
+    
+/*-------- Colors --------*/
+
+  --background-color: #fff;
+
+  --color-text: #333;
+  --color-text-secondary: #637282;
+  --color-link: blue;
+  --color-link-underline: ;
+  --color-sidenote: #333;
+
+  --highlight-red: red;
+  --highlight-yellow: #ffe599;
+  --highlight-green: #b6d7a8;
+  --highlight-blue: #a4c2f4;
+  --highlight-purple: #b4a7d6;
+
+  --color-inline-code: #1b2733;
+  --color-inline-code-bg: #ffffff;
+  --color-code-highlight-bg: #fffbdd;
+
+  --color-border: #dfdfd0;
+  --color-border-heavy: #ccccd4;
+
+  --color-table-heading: #f3f3fb;
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #161313;
+
+    --color-text: #f7f5f2;
+    --color-text-secondary: #9d9b99;
+    --color-link: blue;
+    --color-sidenote: #b4b2af;
+
+    --highlight-red: #660000;
+    --highlight-yellow: #7f6000;
+    --highlight-green: #274e13;
+    --highlight-blue: #1c4587;
+    --highlight-purple: #351c75;
+
+    --color-inline-code: #fff9f9;
+    --color-inline-code-bg: #1a1a1a     ;
+
+    --color-border: #393635;
+    --color-border-heavy: #524f4d;
+
+    --color-table-heading: #242121;
+    --color-code-highlight-bg: #2d2a00;
+  }/*
+  .org-keyword { color: #c678dd; }
+  .org-string { color: #98c379; }
+  .org-comment { color: #5c6370; }
+  .org-function-name { color: #61afef; }
+  .org-variable-name { color: #e06c75; }
+  .org-type { color: #e5c07b; }
+  .org-constant { color: #56b6c2; }*/
+}
+
+  
+  
+/*-------- Text ------- */
+
+  --font-family-prose: sans-serif;
+  --font-family-heading: sans-serif;
+  --font-family-code: 'JetBrainsMon';
+  --side-note-number-font-family: var(--font-family-heading);
+  
+  --line-height: 19px;
+  --font-size: 14px;
+
+  --inline-code-font-size: 15px;
+  --code-block-font-size: 14px;
+  --code-block-side-padding: 8px;
+  --line-numbers-font-size: 12px;
+
+  --tight-code-line-height: 18px;
+  --tight-code-padding-top: 5px;
+
+  --side-note-line-height: 17.55px;
+  --side-note-font-size: 13px;
+  --side-note-code-font-size: 13px;
+  --side-note-baseline-offset: 4px;
+  --side-note-sup-offset: -6px;
+  --side-note-number-hang-left: -6px;
+  --side-note-text-indent: -9px;
+
+  --title-font-size: 14px;
+  --title-code-font-size: 22px;
+  --title-line-height: 19px;
+  --title-margin-top: 32.4px;
+
+  --h1-font-size: 17px;
+  --h1-code-font-size: 16px;
+  --h1-line-height: 24px;
+  --h1-word-spacing: 0.5px;
+  --h1-margin-top: 24px;
+  --h1-margin-bottom: 12px;
+
+  --h2-font-size: 16px;
+  --h2-code-font-size: 15px;
+  --h2-line-height: 23px;
+  --h2-word-spacing: 0.5px;
+  --h2-margin-top: 23px;
+  --h2-margin-bottom: 6px;
+
+  --h3-font-size: 15px;
+  --h3-code-font-size: 14px;
+  --h3-line-height: 20.25px;
+  --h3-word-spacing: 0.5px;
+  --h3-margin-top: 20.25px;
+  --h3-margin-bottom: 6px;
+
+  --ul-indent-size: 23px;
+  --ol-indent-size: 19px;
+  --ol-li-padding-left: 4px;
+
+  --hr-margin-top: 18px;
+  --hr-margin-bottom: calc(var(--line-height) - var(--hr-margin-top) - 1px);
+
+  --extra-wide-scale-factor: 1.5;
+
+  --figcaption-line-height: 21px;
+  --figcaption-font-size: 14px;
+  --figcaption-code-font-size: 13px;
+  --figcaption-gap: 6px;
+  --captioned-figure-gap: 10px;
+
+  --table-line-height: 21px;
+  --table-font-size: 14px;
+  --table-code-font-size: 13px;
+
+  --nav-toc-font-size: 12px;
+  --nav-toc-code-font-size: 12px;
+  --nav-toc-indent: 15px;
+  --nav-toc-baseline-offset: 2px;
+
+/* ------- Layout ------- */
+
+  --main-width: 745px;
+  /* The name doesn't indicate it, but this variable actually specifies an
+   * effective minimum width. (It didn't previously behave this way, but the
+   * change to do so was made in a backwards-compatible way, so the variable
+   * was not renamed.)
+   **/
+  --main-width-narrow: 550px;
+  --side-note-max-width: 300px;
+
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  /* https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family-prose);
+  color: var(--color-text);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  -webkit-font-variant-ligatures: no-common-ligatures;
+  font-variant-ligatures: no-common-ligatures;
+
+  /* Safari-only right now but looks so good. */
+  hanging-punctuation: first;
+
+  margin: 0;
+  padding: 0;
+  padding-top: var(--title-margin-top);
+  width: 100%;
+
+  background-color: var(--background-color);
+}
+
+@media print {
+  body {
+    background-color: initial;
+  }
+}
+
+
+/*========================= Utility classes ==============================  */
+.only-light-mode {
+  display: inherit;
+}
+.only-dark-mode {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .only-light-mode {
+    display: none;
+  }
+  .only-dark-mode {
+    display: inherit;
+  }
+}
+/*====================== Sidenotes and margin-notes =======================*/
+
+.sidenote,
+.marginnote {
+  color: var(--color-sidenote);
+
+  font-size: var(--side-note-font-size);
+  line-height: var(--side-note-line-height);
+  vertical-align: baseline;
+
+  /* Align first baseline to body. */
+  margin-top: var(--side-note-baseline-offset);
+}
+
+.sidenote code,
+.marginnote code {
+  color: var(--color-sidenote);
+}
+
+main {
+  counter-reset: sidenote-counter;
+}
+
+.sidenote-number {
+  counter-increment: sidenote-counter;
+}
+
+.sidenote-number:after,
+.sidenote:before {
+  content: counter(sidenote-counter);
+  position: relative;
+}
+
+nav#TOC label,
+label.margin-toggle:not(.sidenote-number),
+.sidenote-number:after,
+.sidenote:before,
+.footnote-ref sup,
+sup {
+  font-size: var(--side-note-font-size);
+  font-weight: 700;
+  font-family: var(--side-note-number-font-family);
+  -webkit-font-feature-settings: "tnum" 1;
+  font-feature-settings: "tnum" 1;
+
+  /* Mimic 'vertical-align: super' (browser style for sup tag)
+   * without causing a gap in our text's implicit grid. */
+  vertical-align: baseline;
+  position: relative;
+  top: var(--side-note-sup-offset);
+}
+
+sup {
+  font-weight: inherit;
+}
+
+span.sidenote p {
+  /* This overrides the general 'p' margin just for sidenotes */
+  margin-top: 0;
+  margin-bottom: 6px; 
+}
+
+/* Make the superscript hang. */
+.sidenote:before { left: var(--side-note-number-hang-left); }
+/* Get first first column of first row to line up with other rows. */
+.sidenote { text-indent: var(--side-note-text-indent); }
+
+/*}}} */
+/* --- Side note input controls --- {{{ */
+
+input.margin-toggle {
+    display: none;
+}
+label.margin-toggle:not(.sidenote-number) {
+    display: none;
+}
+label.sidenote-number {
+    display: inline;
+}
+
+/* Unfortunately, variables aren't in scope here.
+ * See calculations in Horizontal layouting.
+ */
+@media screen and (max-width: calc(26px + 550px + 26px + 169px + 26px - 1px)) {
+  .margin-toggle:checked + .sidenote,
+  .margin-toggle:checked + .marginnote {
+    margin-top: var(--side-note-line-height);
+    vertical-align: baseline;
+  }
+
+  label.margin-toggle {
+    color: var(--color-link);
+  }
+
+  label.margin-toggle:not(.sidenote-number) {
+    display: inline;
+  }
+
+  label {
+    cursor: pointer;
+  }
+}
+
+
+/* ======================= Headings ======================================= */
+
+h1, h2, h3, h4, h5, h6, .todo, .done {
+  font-family: var(--font-family-heading);
+  font-weight: var(--heading-font-weight);
+}
+
+
+h1.title {
+  font-family: var(--font-family-heading);
+  margin-top: var(--line-height);
+  margin-bottom: var(--line-height);
+  font-size: var(--title-font-size);
+  font-weight: bold;
+  line-height: var(--title-line-height);
+  color: #2a2a2a;
+
+}
+
+h1.title code {
+  font-size: var(--title-code-font-size);
+}
+
+h1:not(.title) {
+  font-size: var(--h1-font-size);
+  line-height: var(--h1-line-height);
+  word-spacing: var(--h1-word-spacing);
+
+  margin-top: var(--h1-margin-top);
+  margin-bottom: var(--h1-margin-bottom);
+}
+
+h1:not(.title) code {
+  font-size: var(--h1-code-font-size);
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+  line-height: var(--h2-line-height);
+  word-spacing: var(--h2-word-spacing);
+
+  margin-top: var(--h2-margin-top);
+  margin-bottom: var(--h2-margin-bottom);
+  text-transform: uppercase;
+
+}
+
+h2 code {
+  font-size: var(--h2-code-font-size);
+}
+
+h3,h4 {
+  font-size: var(--h3-font-size);
+  line-height: var(--h3-line-height);
+  word-spacing: var(--h3-word-spacing);
+  text-transform: uppercase;
+
+}
+
+h1:not(.title) + *, h1:not(.title) + p { margin-top: var(--h1-margin-bottom); }
+h2 + *, h2 + p                         { margin-top: var(--h2-margin-bottom); }
+h3 + *, h3 + p                         { margin-top: 0; }
+
+.date	{
+  font-family: var(--font-family-heading);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-top: 16px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+
+  font-family: var(--font-family-heading); /* Inter */
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  margin-top: 8px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+
+/*============================ Prose ====================================== */
+
+p {
+    text-align: justify;
+    hyphens: auto;
+}
+
+p, main > ul, main > ol, div.org-src-container, main > pre, img, table {
+  margin-top: var(--line-height);
+  margin-bottom: var(--line-height)
+}
+
+* List indentation */
+ul:not(.org-ul) {
+  margin-left: var(--ul-indent-size);
+}
+ul.org-ul {
+  margin-left: var(--ul-indent-size);
+}
+ol {
+  margin-left: var(--ol-indent-size);
+}
+ol > li {
+  padding-left: var(--ol-li-padding-left);
+}
+* List indentation */
+ul:not(.org-ul) {
+  margin-left: var(--ul-indent-size);
+}
+ul.org-ul {
+  margin-left: var(--ul-indent-size);
+}
+ol {
+  margin-left: var(--ol-indent-size);
+}
+ol > li {
+  padding-left: var(--ol-li-padding-left);
+}
+
+/* Org-mode task lists (checkboxes) */
+ul.org-ul > li.on, 
+ul.org-ul > li.off, 
+ul.org-ul > li.trans {
+  list-style: none;
+}
+
+
+ol                         { list-style-type: decimal; }
+ol ol                      { list-style-type: lower-alpha; }
+ol ol ol                   { list-style-type: lower-roman; }
+ol ol ol ol                { list-style-type: decimal; }
+ol ol ol ol ol             { list-style-type: lower-alpha; }
+ol ol ol ol ol ol          { list-style-type: lower-roman; }
+ol ol ol ol ol ol ol       { list-style-type: decimal; }
+ol ol ol ol ol ol ol ol    { list-style-type: lower-alpha; }
+ol ol ol ol ol ol ol ol ol { list-style-type: lower-roman; }
+
+ul                         { list-style-type: disc; }
+ul ul                      { list-style-type: circle; }
+ul ul ul                   { list-style-type: square; }
+ul ul ul ul                { list-style-type: disc; }
+ul ul ul ul ul             { list-style-type: circle; }
+ul ul ul ul ul ul          { list-style-type: square; }
+ul ul ul ul ul ul ul       { list-style-type: disc; }
+ul ul ul ul ul ul ul ul    { list-style-type: circle; }
+ul ul ul ul ul ul ul ul ul { list-style-type: square; }
+
+blockquote {
+  border-left: 1px solid var(--color-text-secondary);
+  padding-left: 1.5rem;
+
+  font-style: italic;
+}
+
+blockquote > p {
+  margin-top: 0;
+}
+
+blockquote em, blockquote i, blockquote .sidenote-wrapper {
+  font-style: normal;
+}
+
+hr {
+  margin-top: var(--hr-margin-top);
+  margin-bottom: var(--hr-margin-bottom);
+  border-style: solid;
+  color: var(--color-border-heavy);
+  border-width: 1px 0 0;
+}
+
+a, a:link, a:visited {
+  color: var(--color-link);
+  text-decoration: underline;
+  font-family: 'Inter-Regular';
+  text-decoration-color: var(--color-link-underline);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+span.mark, mark {
+  /* Reset browser styles */
+  color: inherit;
+
+  padding: 2px 0 1px;
+}
+span.mark.red,    mark.red    { background-color: var(--highlight-red);    }
+span.mark.yellow, mark.yellow { background-color: var(--highlight-yellow); }
+span.mark.green,  mark.green  { background-color: var(--highlight-green);  }
+span.mark.blue,   mark.blue   { background-color: var(--highlight-blue);   }
+span.mark.purple, mark.purple { background-color: var(--highlight-purple); }
+
+.todo {
+  color: red;
+  }
+
+.done {
+    color: green;
+}
+
+.subtitle {
+  margin-top: 0;
+}
+.author, .date {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.signoff {
+  margin-top: calc(4 * var(--line-height));
+  margin-bottom: calc(4 * var(--line-height));
+}
+
+.tag {
+    font-family: var(--font-family-code);
+    font-size: var(--h3-code-font-size);
+    color: var(--color-text-secondary);
+  }
+
+
+.katex-display {
+  background: var(--background-color);
+  transform: translateZ(0px);
+}
+
+@media print {
+  .katex-display {
+    background-color: initial;
+  }
+}
+
+
+/* ===========================  Code ===== =================================*/
+pre {
+  /*border: 1px solid var(--color-border);*/
+  border-radius: 3px;
+  background-color: var(--color-inline-code-bg);
+  padding: 8pt;
+  font-family: var(--font-family-code);
+  overflow: auto;
+  margin: 1.2em 0;
+}
+
+pre.src {
+  position: relative;
+  overflow: auto;
+}
+
+pre.src:before {
+  display: none;
+  position: absolute;
+  top: -8px;
+  right: 12px;
+  padding: 3px;
+  color: #555;
+  background-color: var(--color-inline-code-bg);
+}
+
+pre.src:hover:before { 
+  display: inline; 
+  margin-top: 14px;
+}
+
+pre.src.src-authinfo::before { content: 'Authinfo'; }
+pre.src.src-C:before { content: 'C'; }
+pre.src.src-clojure:before { content: 'Clojure'; }
+pre.src.src-css:before { content: 'CSS'; }
+pre.src.src-ditaa:before { content: 'ditaa'; }
+pre.src.src-dot:before { content: 'Graphviz'; }
+pre.src.src-calc:before { content: 'Emacs Calc'; }
+pre.src.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+pre.src.src-gnuplot:before { content: 'gnuplot'; }
+pre.src.src-haskell:before { content: 'Haskell'; }
+pre.src.src-java:before { content: 'Java'; }
+pre.src.src-js:before { content: 'Javascript'; }
+pre.src.src-latex:before { content: 'LaTeX'; }
+pre.src.src-lisp:before { content: 'Lisp'; }
+pre.src.src-lua:before { content: 'Lua'; }
+pre.src.src-matlab:before { content: 'MATLAB'; }
+pre.src.src-org:before { content: 'Org mode'; }
+pre.src.src-plantuml:before { content: 'Plantuml'; }
+pre.src.src-python:before { content: 'Python'; }
+pre.src.src-R:before { content: 'R'; }
+pre.src.src-scheme:before { content: 'Scheme'; }
+pre.src.src-sh:before { content: 'shell'; }
+pre.src.src-sql:before { content: 'SQL'; }
+pre.src.src-sqlite:before { content: 'SQLite'; }
+pre.src.src-makefile:before { content: 'Makefile'; }
+pre.src.src-shell:before { content: 'Shell Script'; }
+pre.src.src-cpp:before  { content: 'C++'; }
+pre.src.src-bash:before  { content: 'bash'; }
+pre.src.src-asm:before { content: 'Assembler'; }
+pre.src.src-html:before { content: 'HTML'; }
+pre.src.src-pascal:before { content: 'Pascal'; }
+pre.src.src-ps:before { content: 'PostScript'; }
+pre.src.src-tex:before { content: 'TeX'; }
+pre.src.src-plain-tex:before { content: 'Plain TeX'; }
+pre.src.src-xml:before { content: 'XML'; }
+pre.src.src-nxml:before { content: 'XML'; }
+
+code {
+  font-family: var(--font-family-code);
+
+  word-spacing: normal;
+
+  /* Only for inline code */
+  color: var(--color-inline-code);
+  background-color: var(--color-inline-code-bg);
+  font-size: var(--inline-code-font-size);
+  margin: 0;
+  padding: 2px 0 1px;
+  border: 1px solid var(--color-border);
+  border-radius: 1px;
+}
+
+.sidenote code,
+.marginnote code {
+  font-size: var(--side-note-code-font-size);
+}
+
+pre code {
+  /* Reset some changes meant to be inline-only */
+  color: inherit;
+  background-color: inherit;
+  font-size: var(--code-block-font-size);
+  line-height: var(--line-height);
+  margin: initial;
+  padding: initial;
+  border: initial;
+  border-radius: initial;
+}
+
+pre > code {
+  position: relative; /* For line highlights */
+  display: inline-block;
+  min-width: 100%;
+  z-index: 1;
+
+  white-space: pre-wrap;
+
+  padding: 0 var(--code-block-side-padding);
+}
+
+pre > code::selection {
+  background: transparent;
+}
+
+.wide > pre, .wide > div.org-src-container {
+  /* Put this in front of the table of contents */
+  transform: translateZ(0px);
+}
+
+.wide pre > code {
+  white-space: pre;
+}
+
+div.org-src-container {
+  --line-numbers-width: calc(4 * var(--line-numbers-font-size));
+  --line-numbers-negative-width: calc(-1 * var(--line-numbers-width));
+  margin-left: var(--line-numbers-negative-width);
+}
+div.org-src-container > pre {
+  margin-left: var(--line-numbers-width);
+}
+
+/* syntax highlighting */
+
+.org-keyword { color: #a626a4; }
+.org-string { color: #2080af; }
+.org-comment { color: #92454f; font-style: italic; }
+.org-function-name { color: #af40af; }
+.org-variable-name { color: #007faa; }
+.org-type { color: #2f5faf; }
+.org-constant { color: #c50f4f; }
+
+
+/* ====================  Media and figures ================================*/
+
+/* There's only a figure if there's a caption. */
+figure {
+  margin-bottom: var(--captioned-figure-gap);
+}
+
+figure + p {
+  margin-top: var(--captioned-figure-gap);
+}
+
+figure > img, figure > pre, figure > div.org-src-container {
+  margin-bottom: var(--figcaption-gap);
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.wide img {
+  /* Put this in front of the table of contents */
+  transform: translateZ(0px);
+}
+
+figcaption {
+  font-size: var(--figcaption-font-size);
+  line-height: var(--figcaption-line-height);
+  font-style: italic;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+.left-align-caption figcaption {
+  text-align: left;
+}
+
+figcaption code {
+  font-size: var(--figcaption-code-font-size);
+}
+
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;  /* keeps aspect ratio */
+  margin-top: var(--line-height);
+  margin-bottom: var(--line-height);
+}
+
+
+/* ========================== Tables =======================================*/
+
+
+table {
+  -webkit-font-feature-settings: "tnum" 1;
+  font-feature-settings: "tnum" 1;
+  font-size: var(--table-font-size);
+  line-height: var(--table-line-height);
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: var(--background-color);
+}
+
+thead, tbody {
+    vertical-align: top;
+    text-align: center;
+    border: none;
+}
+
+td, th {
+    padding: 6px;
+    border: none;
+}
+
+
+thead tr:last-child th {
+  border-bottom: 1px solid var(--color-text);
+}
+
+
+tbody:nth-child(even) tr {background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+td > *:first-child {
+  margin-top: 0;
+}
+td > *:last-child {
+  margin-bottom: 0;
+}
+
+
+/* @media print { */
+/*   table { */
+/*     background-color: initial; */
+/*   } */
+/* } */
+
+/* table code { */
+/*   font-size: var(--table-code-font-size); */
+/* } */
+
+/* table pre code { */
+/*   font-size: inherit; */
+/* } */
+
+/* .wide table { */
+/*   /\* Put this in front of the table of contents *\/ */
+/*   transform: translateZ(0px); */
+/* } */
+
+/* table td, table th { */
+/*   border: 1px solid var(--color-border-heavy); */
+/*   padding: 5px 8px; */
+/*   min-width: 100px; */
+/* } */
+/* table th { */
+/*   background-color: var(--color-table-heading); */
+/* } */
+
+/* table > caption { */
+/*   caption-side: bottom; */
+/*   margin-top: var(--figcaption-gap); */
+/*   margin-bottom: calc(var(--captioned-figure-gap) - var(--line-height)); */
+/*   font-size: var(--figcaption-font-size); */
+/*   line-height: var(--figcaption-line-height); */
+/*   font-style: italic; */
+/*   text-align: center; */
+/*   color: var(--color-text-secondary); */
+/* } */
+
+/* .left-align-caption table > caption { */
+/*   text-align: left; */
+/* } */
+
+/* table > caption code { */
+/*   font-size: var(--figcaption-code-font-size); */
+/* } */
+
+/* /\* --- Notes are just single cell tables --- *\/ */
+
+/* .note table { */
+/*   font-size: inherit; */
+/*   line-height: inherit; */
+/* } */
+/* .note table, .note td { */
+/*   border: none; */
+/* } */
+
+/* .note.red    td { background: var(--highlight-red); } */
+/* .note.yellow td { background: var(--highlight-yellow); } */
+/* .note.green  td { background: var(--highlight-green); } */
+/* .note.blue   td { background: var(--highlight-blue); } */
+/* .note.purple td { background: var(--highlight-purple); } */
+
+
+
+/* ====================== Table of contents =============================== */
+
+.date.before-toc {
+  padding-bottom: var(--line-height);
+}
+
+nav#TOC {
+  margin-bottom: var(--line-height);
+  border-left: 1px solid var(--color-text-secondary);
+  padding-left: 1.5rem;
+}
+
+nav#TOC input {
+  display: none;
+}
+
+nav#TOC label {
+  color: var(--color-link);
+  cursor: pointer;
+}
+
+nav#TOC > ul {
+  display: none;
+}
+
+nav#TOC > input:checked + ul {
+  display: block;
+}
+
+@media print {
+  nav#TOC > input + ul {
+    display: block;
+  }
+}
+
+/* Unfortunately, variables aren't in scope here.
+ * 745px = --main-width
+ * 52px = 2 * --line-height
+ * 206px = side note min width
+ */
+@media screen and (min-width: calc(745px + 2 * (52px + 206px + 52px) - 1px)) {
+  header {
+    margin-bottom: var(--line-height);
+  }
+
+  .date.before-toc {
+    padding-bottom: initial;
+  }
+
+  nav#TOC {
+    /* Unset some styles for small screen width */
+    margin-bottom: initial;
+    border-left: initial;
+    padding-left: initial;
+
+    position: sticky;
+    margin-top: calc(var(--nav-toc-baseline-offset));
+    float: left;
+    top: var(--line-height);
+
+    font-size: var(--nav-toc-font-size);
+    color: var(--color-text-secondary);
+
+    margin-left: var(--line-height);
+
+    max-width: calc((100vw - var(--main-width)) / 2 - 2 * var(--line-height));
+    max-height: calc(100vh - 2 * var(--line-height));
+    overflow-y: auto;
+  }
+
+  nav#TOC label {
+    display: none;
+  }
+
+  nav#TOC ul {
+    display: block;
+    list-style: none;
+    margin-left: var(--nav-toc-indent);
+  }
+  nav#TOC > ul {
+    margin-left: 0;
+  }
+
+  nav#TOC li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  nav#TOC code {
+    font-size: var(--nav-toc-code-font-size);
+  }
+
+  nav#TOC code,
+  nav#TOC a,
+  nav#TOD a:link,
+  nav#TOD a:visited {
+    color: var(--color-text-secondary);
+  }
+
+  nav#TOC a:hover,
+  nav#TOC a:hover code {
+    text-decoration: none;
+    color: var(--color-link);
+  }
+}
+
+/* =========================== SUMMARY ====================================*/ 
+
+.summary {
+  /* Mobile/default: inline with content */
+    margin-bottom: 0.25em;
+    margin-top: 0;
+  border-left: 1px solid var(--color-text-secondary);
+  padding-left: 1.5rem;
+}
+
+.summary h2 {
+  /* Using h3 for semantic hierarchy */
+  font-family: sans-serif;
+  line-height: 18px;
+  font-size: 14px;
+  font-variant-caps: all-small-caps;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+
+.summary h2:first-child {
+  margin-top: 0;
+}
+
+.summary p {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  font-size: var(--side-note-font-size);
+  line-height: var(--side-note-line-height);
+  color: var(--color-sidenote);
+}
+
+/* Wide screens: Float in left margin */
+@media screen and (min-width: calc(745px + 2 * (52px + 206px + 52px) - 1px)) {
+  .summary {
+    /* Reset mobile styles */
+    margin-bottom: initial;
+    border-left: initial;
+    padding-left: initial;
+    
+    /* Position in left margin */
+    position: static;
+    float: left;
+    top: var(--line-height);
+    margin-left: var(--line-height);
+    padding-right: 32px;
+    
+    max-width: calc((100vw - var(--main-width)) / 2 - 2 * var(--line-height));
+    max-height: calc(100vh - 2 * var(--line-height));
+    overflow-y: auto;
+  }
+  
+  .summary h3 {
+    /* Smaller sizing in margin */
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 7px;
+  }
+  
+  .summary p {
+    font-size: 14px;
+    line-height: 18px;
+    text-align: justify;
+    hyphens: auto;
+  }
+}
+
+/* Print styles */
+@media print {
+  .summary {
+    page-break-inside: avoid;
+  }
+}
+
+/* =========== Horizontal Layout (main, side notes, extra-wide) ========== */
+
+/* TODO: Add summary */
+
+.sidenote,
+.marginnote {
+  float: right;
+  clear: right;
+  position: relative;
+
+  width: var(--computed-width);
+  max-width: var(--side-note-max-width);
+  margin-right: calc(-1 * min(var(--computed-width), var(--side-note-max-width)) - var(--margin-left));
+}
+
+/* ----------- Side notes and table of contents always visible ----------- */
+
+/* Unfortunately, variables aren't in scope here.
+ * 745px = --main-width
+ * 52px = 2 * --line-height
+ * 206px = side note min width
+ */
+@media screen and (min-width: calc(745px + 2 * (52px + 206px + 52px))) {
+  header,
+  main,
+  footer {
+    max-width: var(--main-width);
+  }
+
+  header,
+  main,
+  footer {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sidenote,
+  .marginnote {
+    --margin-left: calc(2 * var(--line-height));
+    --margin-right: var(--margin-left);
+    --computed-width: calc((100vw - 100%) / 2 - var(--margin-right) - var(--margin-left));
+  }
+
+  .wide {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .wide.extra-wide {
+    margin-left: calc((1 - var(--extra-wide-scale-factor)) / 2 * 100%);
+    width: calc(var(--extra-wide-scale-factor) * 100%);
+  }
+
+  .wide.full-width {
+    margin-left: calc(var(--line-height) - ((100vw - var(--main-width)) / 2));
+    width: calc(100vw - 2 * var(--line-height));
+  }
+
+  .wide.extra-wide figcaption,
+  .wide.extra-wide table > caption {
+    margin-left: calc(((var(--extra-wide-scale-factor) - 1) / 2) * var(--main-width));
+    max-width: var(--main-width);
+    margin-right: calc(100% - var(--main-width) - (((var(--extra-wide-scale-factor) - 1) / 2) * var(--main-width)));
+  }
+
+  .wide.full-width figcaption,
+  .wide.full-width table > caption {
+    margin-left: calc((100vw - var(--main-width)) / 2 - var(--line-height));
+    max-width: var(--main-width);
+    margin-right: calc(100% - var(--main-width) - ((100vw - var(--main-width)) / 2 - var(--line-height)));
+  }
+}
+
+/* ------- Side notes visibile, TOC  collapsed, double-wide margins -------*/
+
+/* Unfortunately, variables aren't in scope here.
+ * 745px = --main-width
+ * 52px = 2 * --line-height
+ * 206px = side note min width
+ */
+@media screen and (min-width: calc(52px + 745px + 52px + 206px + 52px)) and (max-width: calc(745px + 2 * (52px + 206px + 52px) - 1px)) {
+  header,
+  nav#TOC,
+  main,
+  footer {
+    margin-left: calc(2 * var(--line-height));
+    max-width: var(--main-width);
+    margin-right: auto;
+  }
+
+  .sidenote,
+  .marginnote {
+    --margin-left: calc(2 * var(--line-height));
+    --margin-right: var(--margin-left);
+    --computed-width: calc(100vw - var(--main-width) - calc(2 * var(--line-height)) - var(--margin-right) - var(--margin-left));
+  }
+
+  .wide {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .wide.extra-wide {
+    margin-left: calc(-1 * var(--line-height));
+    width: calc(100vw - 2 * var(--line-height));
+    max-width: calc(var(--extra-wide-scale-factor) * var(--main-width));
+  }
+
+  .wide.full-width {
+    margin-left: calc(-1 * var(--line-height));
+    width: calc(100vw - 2 * var(--line-height));
+    max-width: calc(100vw - 2 * var(--line-height));
+  }
+
+  .wide.extra-wide .katex-display,
+  .wide.full-width .katex-display {
+    padding-left: var(--line-height);
+    padding-right: var(--line-height);
+  }
+
+  .wide.extra-wide .katex-display,
+  .wide.extra-wide .katex-display > .katex,
+  .wide.full-width .katex-display,
+  .wide.full-width .katex-display > .katex {
+    text-align: left;
+  }
+
+  .wide.extra-wide figcaption,
+  .wide.extra-wide table > caption,
+  .wide.full-width figcaption,
+  .wide.full-width table > caption {
+    text-align: left;
+    margin-left: var(--line-height);
+    max-width: var(--main-width);
+  }
+}
+
+/* ------------ Side notes visibile, table of contents collapsed --------- */
+
+/* Unfortunately, variables aren't in scope here.
+ * 550px = --main-width-narrow
+ * 26px = --line-height
+ * 169px = side note min width narrow
+ */
+@media screen and (min-width: calc(26px + 550px + 26px + 169px + 26px)) and (max-width: calc(52px + 745px + 52px + 206px + 52px - 1px)) {
+  header,
+  nav#TOC,
+  main,
+  footer {
+    margin-left: var(--line-height);
+    max-width: calc(max(var(--main-width-narrow), 100vw - (3 * var(--line-height)) - var(--side-note-max-width)));
+    margin-right: auto;
+  }
+
+  .sidenote,
+  .marginnote {
+    --margin-left: var(--line-height);
+    --margin-right: var(--line-height);
+    --computed-width: calc(100vw - var(--main-width-narrow) - var(--line-height) - var(--margin-right) - var(--margin-left));
+  }
+
+  .wide {
+    width: var(--main-width);
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .wide .katex-display,
+  .wide .katex-display > .katex {
+    text-align: left;
+  }
+
+  .wide figcaption,
+  .wide table > caption {
+    text-align: left;
+    max-width: var(--main-width-narrow);
+  }
+
+  .wide.extra-wide,
+  .wide.full-width {
+    width: calc(100vw - 2 * var(--line-height));
+  }
+}
+
+/*------------- Side notes and table of contents collapsed --------------- */
+
+/* Unfortunately, variables aren't in scope here.
+ * See calculations above.
+ */
+@media screen and (max-width: calc(26px + 550px + 26px + 169px + 26px - 1px)) {
+  header,
+  nav#TOC,
+  main,
+  footer {
+    margin-left: var(--line-height);
+    margin-right: var(--line-height);
+  }
+
+  .sidenote,
+  .marginnote {
+    display: none;
+  }
+
+  .margin-toggle:checked + .sidenote,
+  .margin-toggle:checked + .marginnote {
+    display: block;
+    float: left;
+    clear: both;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .wide {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .wide .katex-display,
+  .wide .katex-display > .katex {
+    text-align: left;
+  }
+
+  .wide figcaption,
+  .wide table > caption {
+    text-align: left;
+    max-width: calc(100vw - 2 * var(--line-height));
+  }
+}
+
+
+/* ==================== Paged media (print styles) ======================= */
+@page {
+  size: letter;
+  margin: 0.5in;
+  /* To make room for line numbers in left margin. */
+  margin-left: 0.25in;
+}
+
+@media print {
+  :root {
+    --line-height: 18px;
+    --font-size: 12px;
+
+    --inline-code-font-size: 11px;
+    --code-block-font-size: 10px;
+    --code-block-side-padding: 6px;
+    --line-numbers-font-size: 8.5px;
+
+    --tight-code-line-height: 12.5px;
+    --tight-code-padding-top: 2px;
+
+    --side-note-line-height: 14px;
+    --side-note-font-size: 9px;
+    --side-note-code-font-size: 9px;
+    --side-note-baseline-offset: 3px;
+    --side-note-sup-offset: -4px;
+    --side-note-number-hang-left: -4px;
+    --side-note-text-indent: -6.5px;
+
+    --title-font-size: 30px;
+    --title-code-font-size: 29px;
+    --title-line-height: 37px;
+    --title-margin-top: 71px;
+
+    --h1-font-size: 22px;
+    --h1-code-font-size: 20px;
+    --h1-line-height: 28px;
+    --h1-word-spacing: 0.5px;
+    --h1-margin-top: 18px;
+    --h1-margin-bottom: 6px;
+
+    --h2-font-size: 16.5px;
+    --h2-code-font-size: 15px;
+    --h2-line-height: 22px;
+    --h2-word-spacing: 0px;
+    --h2-margin-top: 14px;
+    --h2-margin-bottom: 4.5px;
+
+    --ul-indent-size: 18px;
+    --ol-indent-size: 14px;
+
+    --hr-margin-top: 14px;
+
+    --figcaption-line-height: 16px;
+    --figcaption-font-size: 10px;
+    --figcaption-code-font-size: 9.5px;
+    --figcaption-gap: 4.5px;
+    --captioned-figure-gap: 7.5px;
+
+    --table-line-height: 16px;
+    --table-font-size: 10px;
+    --table-code-font-size: 9.5px;
+
+    --nav-toc-font-size: 8.5px;
+    --nav-toc-code-font-size: 8.5px;
+  }
+
+  body {
+    padding-top: 0;
+    /* To make room for line numbers in left margin. */
+    padding-left: 0.25in;
+  }
+
+  header,
+  nav#TOC,
+  main,
+  footer {
+    width: 5.25in;
+    margin-right: auto;
+  }
+
+  .sidenote,
+  .marginnote {
+    width: 2in;
+    margin-right: -2.25in;
+  }
+
+  .wide {
+    width: 7.5in;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  .wide .katex-display,
+  .wide .katex-display > .katex {
+    text-align: left;
+  }
+
+  .wide figcaption,
+  .wide table > caption {
+    text-align: left;
+    width: 5.25in;
+  }
+
+  .wide pre > code {
+    white-space: pre-wrap;
+  }
+}
+
+h1, h2, h3 {
+  page-break-after: avoid;
+}
+
+table, figure, pre, im {
+  page-break-inside: avoid;
+}
