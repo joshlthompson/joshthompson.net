@@ -1,0 +1,10 @@
+# The name of your website or worker.
+name = "joshthompson-net"
+
+# The date ensures your worker runs on a stable version of the Workers runtime.
+compatibility_date = "2025-09-10"
+
+# Configuration for a static site (Pages).
+[site]
+# The directory containing your static assets. "." means the current directory.
+bucket = "."
