@@ -18,7 +18,7 @@
 html, body {
     font-family: sans-serif;
     height: 100%;
-    font-size: 0.91;
+    font-size: 0.91em;
     line-height: 1.4;
     margin: 0;
     padding: 0;
@@ -50,10 +50,6 @@ a:hover {
 
 a:visited {
     text-decoration: line-through;
-}
-
-p {
-    font-size: 0.91em;
 }
 
 
@@ -240,7 +236,7 @@ p {
 
 .archive-item a:visited {
     text-decoration: line-through ;
-
+}
 .archive-item .date {
     font-size: 0.9em;
     white-space: nowrap;
